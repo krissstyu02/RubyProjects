@@ -19,3 +19,5 @@ def reverse_between_min_max(array)
   min,max=max,min if min>max
   array[0..min].concat(array[min+1..max-1].reverse).concat(array[max..array.length-1])
 end
+
+
