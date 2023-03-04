@@ -21,3 +21,4 @@ puts student3.contact?
 student1.set_contacts({telegram: '@user2000'})
 puts student1# frozen_string_literal: true
 
+
