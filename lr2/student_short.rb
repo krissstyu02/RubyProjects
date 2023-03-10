@@ -4,38 +4,55 @@ require 'json'
 
 class StudentShort
   # стандартные геттеры и сеттеры для класса
-  attr_reader :id, :git, :contact
+  attr_reader :id, :git, :contact, :last_name, :initials
 
-  def initialize(id, info_str)
-    self.id = id
-    result = JSON.parse(info_str)
-    raise ArgumentError, 'Missing fields: last_name, first_name, paternal_name' unless result.key?('first_name') && result.key?('last_name') && result.key?('paternal_name')
+  #конструктор, принимающий аргументы класса student
+  def initialize(student)
+    @id = student.id
 
-    @last_name = result['last_name']
-    @initials = "#{result['first_name'][0]}. #{result['paternal_name'][0]}."
-    set_contacts(result)
+    @last_name = student.last_name
+    @initials = "#{student.first_name[0]}. #{student.paternal_name[0]}."
+    @git = student.git unless student.git.nil?
+    @contact = student.contact
   end
 
-  def self.from_student(student)
-    info = { last_name: student.last_name, first_name: student.first_name, paternal_name: student.paternal_name,
-             git: student.git, email: student.email, phone: student.phone, telegram: student.telegram }
-    StudentShort.new(student.id, JSON.generate(info))
+  # конструктор, принимающий на вход id и строку, с инф
+  def self.from_str(id, str)
+    result = JSON.parse(str)
+    raise ArgumentError, 'Missing fields: last_name, first_name, paternal_name' unless result.key?('first_name') &&
+      result.key?('last_name') && result.key?('paternal_name')
+
+    StudentShort.new(Student.new(result['last_name'],result['first_name'],result['paternal_name'],id: id,
+                                 phone: result['phone'], git: result['git'],
+                                 email: result['email'],telegram: result['telegram']))
   end
 
-
-
+  #фамилия и инициалы
   def last_name_and_initials
     "#{last_name} #{initials}"
   end
 
-  private
-
-  attr_reader :last_name, :initials
-
-  def set_contacts(contacts)
-    return @contact = contacts['phone'] if contacts.key?('phone')
-    return @contact = contacts['telegram'] if contacts.key?('telegram')
-
-    @contact = contacts['email'] if contacts.key?('email')
+  # метод возвращающий представление объекта в виде строки
+  def to_s
+    result = last_name_and_initials
+    result += " id= #{id} " unless id.nil?
+    result += contact unless contact.nil?
+    result
   end
+
+  # метод проверяющий наличие гита
+  def git?
+    !git.nil?
+  end
+
+  # метод проверяющий наличие контакта
+  def contact?
+    !contact.nil?
+  end
+
+  def validate
+    git? && contact?
+  end
+
 end
+

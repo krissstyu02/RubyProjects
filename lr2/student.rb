@@ -1,4 +1,5 @@
 require 'json'
+require_relative 'student_short'
 class Student
   # стандартные геттеры и сеттеры для класса
   attr_accessor :id
@@ -23,16 +24,26 @@ class Student
   def self.valid_email?(email)
     email.match(/^[A-Za-z0-9\-_]+@[A-Za-z]+\.([A-Za-z]+\.)*[A-Za-z]+$/)
   end
-  # конструктор
-  def initialize(last_name, first_name, paternal_name, options = {})
+  # конструктор(переделан)
+  def initialize(last_name, first_name, paternal_name, id: nil, git: nil, phone: nil, email: nil, telegram: nil)
     self.last_name = last_name
     self.first_name = first_name
     self.paternal_name = paternal_name
-    self.id = options[:id]
-    self.phone = options[:phone]
-    self.git = options[:git]
-    self.telegram = options[:telegram]
-    self.email = options[:email]
+    self.id = id
+    self.git = git
+    set_contacts(phone: phone, email: email, telegram: telegram)
+  end
+
+  #парсинг строки и исключения(констурктор)
+  def self.init_from_json(str)
+    result = JSON.parse(str)
+    raise ArgumentError,"The argument must have first_name, paternal_name, and last_name" unless
+      (result.has_key?('last_name') and result.has_key?('first_name,') and result.has_key?('paternal_name'))
+
+    first_name = result.delete('first_name')
+    paternal_name = result.delete('paternal_name')
+    last_name = result.delete('last_name')
+    Student.new(last_name, first_name, paternal_name, **result.transform_keys(&:to_sym))
   end
 
   #сеттер
@@ -78,7 +89,8 @@ class Student
     @email = email
   end
 
-  def short_name
+  #Фамилия и инициалы
+  def last_name_and_initials
     "#{last_name} #{first_name[0]}. #{paternal_name[0]}."
   end
 
@@ -86,8 +98,6 @@ class Student
     return "phone= #{phone}" unless phone.nil?
     return "telegram= #{telegram}" unless telegram.nil?
     return "email= #{email}" unless email.nil?
-
-
     nil
   end
 
@@ -96,31 +106,6 @@ class Student
     "#{short_name},git= #{git}, #{contact}"
   end
 
-
-  def git?
-    !git.nil?
-  end
-
-  def contact?
-    !email.nil? || !phone.nil? || !telegram.nil?
-  end
-
-  #валидация наличия гита и контакта для связи
-  def validate?
-    git? && contact?
-  end
-
-  #парсинг строки и исключения
-  def self.init_from_json(str)
-    result = JSON.parse(str)
-    raise ArgumentError,"The argument must have first_name, paternal_name, and last_name" unless
-      (result.has_key?('last_name') and result.has_key?('first_name,') and result.has_key?('paternal_name'))
-
-    first_name = result.delete('first_name')
-    paternal_name = result.delete('paternal_name')
-    last_name = result.delete('last_name')
-    Student.new(last_name, first_name, paternal_name, **result.transform_keys(&:to_sym))
-  end
 
     #контакты
   def set_contacts(contacts)
