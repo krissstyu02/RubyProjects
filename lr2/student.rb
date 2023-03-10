@@ -78,6 +78,25 @@ class Student
     @email = email
   end
 
+  def short_name
+    "#{last_name} #{first_name[0]}. #{paternal_name[0]}."
+  end
+
+  def contact
+    return "phone= #{phone}" unless phone.nil?
+    return "telegram= #{telegram}" unless telegram.nil?
+    return "email= #{email}" unless email.nil?
+
+
+    nil
+  end
+
+  #краткая информация о студенте
+  def short_info
+    "#{short_name},git= #{git}, #{contact}"
+  end
+
+
   def git?
     !git.nil?
   end
@@ -92,7 +111,7 @@ class Student
   end
 
   #парсинг строки и исключения
-  def self.pars_str(str)
+  def self.init_from_json(str)
     result = JSON.parse(str)
     raise ArgumentError,"The argument must have first_name, paternal_name, and last_name" unless
       (result.has_key?('last_name') and result.has_key?('first_name,') and result.has_key?('paternal_name'))
@@ -109,6 +128,8 @@ class Student
     self.telegram = contacts[:telegram] if contacts.key?(:telegram)
     self.email = contacts[:email] if contacts.key?(:email)
   end
+
+
   def to_s
     result = "#{last_name} #{first_name} #{paternal_name}"
     result += " id=#{id}" unless id.nil?
