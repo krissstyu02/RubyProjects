@@ -4,6 +4,9 @@ student1 = Student.new('Петров', 'Павел', 'Иванович')
 student2 = Student.new('Арбузов', 'Алексей', 'Михайлович', { id: 1, telegram: '@arbalex',phone:'89187652345' })
 student3 = Student.new('Гавриш', 'Анна', 'Николаевна', { id:2, phone: '+79678543657', email: 'gavrish_anna_99@mail.ru', git: '@anna99' })
 
+#парсинг
+puts Student.pars_str('{"last_name": "Иванов",
+	"first_name": "Олег", "paternal_name": "Сергеевич", "id": 4, "phone_number": "+79184657374"}')
 
 puts student1
 puts student2

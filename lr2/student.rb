@@ -1,3 +1,4 @@
+require 'json'
 class Student
   # стандартные геттеры и сеттеры для класса
   attr_accessor :id
@@ -86,11 +87,23 @@ class Student
   end
 
   #валидация наличия гита и контакта для связи
-  def validate
+  def validate?
     git? && contact?
   end
 
-  #контакты
+  #парсинг строки и исключения
+  def self.pars_str(str)
+    result = JSON.parse(str)
+    raise ArgumentError,"The argument must have first_name, paternal_name, and last_name" unless
+      (result.has_key?('last_name') and result.has_key?('first_name,') and result.has_key?('paternal_name'))
+
+    first_name = result.delete('first_name')
+    paternal_name = result.delete('paternal_name')
+    last_name = result.delete('last_name')
+    Student.new(last_name, first_name, paternal_name, **result.transform_keys(&:to_sym))
+  end
+
+    #контакты
   def set_contacts(contacts)
     self.phone = contacts[:phone] if contacts.key?(:phone)
     self.telegram = contacts[:telegram] if contacts.key?(:telegram)
