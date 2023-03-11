@@ -1,0 +1,3 @@
+{"StudentList":["Иванов Иван ","Петров Алексей id=1 telegram=@alex"]}
+
+

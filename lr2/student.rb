@@ -2,8 +2,8 @@ require 'json'
 require_relative 'student_short'
 class Student
   # стандартные геттеры и сеттеры для класса
-  attr_accessor :id
-  attr_reader :last_name, :first_name, :paternal_name,:phone, :telegram, :email, :git
+  attr_writer :id
+  attr_reader :phone, :telegram, :email, :first_name, :paternal_name
 
   #валидатор имени
   def self.valid_name?(name)

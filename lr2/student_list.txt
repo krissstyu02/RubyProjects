@@ -1,0 +1,24 @@
+{
+	"StudentList": {
+			"last_name": "Иванов",
+			"first_name": "Иван",
+			"paternal_name": "Иванович",
+			"phone": "+79185647364",
+			"id": "10"
+		},
+		{
+			"last_name": "Петров",
+			"first_name": "Алексей",
+			"paternal_name": Алексеевич",
+			"telegram": "@alex99",
+			"id": "11"
+		},
+		{
+			"last_name": "Осипенко",
+			"first_name": "Полина",
+			"paternal_name": "Геннадьевна",
+			"id": "12",
+			"telegram": "@polya22"
+		}
+	
+}
