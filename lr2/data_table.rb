@@ -7,6 +7,7 @@ class DataTable
     @data[row][col]
   end
 
+
   def row_count
     @data.size
   end
