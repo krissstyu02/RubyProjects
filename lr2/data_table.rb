@@ -1,33 +1,27 @@
-
 class DataTable
-
-  attr_reader :rows_count, :cols_count
-
-  def initialize(table)
-    self.rows_count = table.length
-    max_cols = 0
-    table.each do |row|
-      max_cols = row.length if row.size > max_cols
-    end
-    self.cols_count = max_cols
-    self.table = table
+  def initialize(data)
+    @data = data
   end
 
-  #метод позволяющиq – получить элемент по номеру строки и столбца
-  def get_item(row, col)
-    return nil if row >= rows_count || row.negative?
-    return nil if col >= cols_count || col.negative?
-
-    table[row][col]
+  def get_element(row, col)
+    @data[row][col]
   end
 
-  def to_s
-    table.map { |row| "[#{row.join(', ')}]" }.join("\n")
+  def row_count
+    @data.size
   end
 
-  private
-
-  attr_accessor :table
-  attr_writer :rows_count, :cols_count
-
+  def column_count
+    @data[0].size
+  end
 end
+
+table = DataTable.new([
+                        [1, 2, 4],
+                        [1, 2, 3],
+                        [4, 5, 6]
+                      ])
+
+puts table.get_element(2, 2) # выводит значение элемента на пересечении второй строки и третьего столбца (3)
+
+

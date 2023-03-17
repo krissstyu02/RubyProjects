@@ -1,9 +1,7 @@
 class Data_list
 
-  attr_reader :selected
-
-  def initialize(data)
-    @data = data
+  def initialize(*elements)
+    @data = elements.sort
     @selected = []
   end
 
@@ -11,19 +9,32 @@ class Data_list
     @data[index]
   end
 
+  def each
+    @data.each { |element| yield element }
+  end
+
+  def size
+    @data.size
+  end
+
+  def self.create(*elements)
+    new(*elements)
+  end
+
   def select(number)
     @selected << number
   end
-
-  def get_selected
-    @selected
-  end
-
-  def get_names
-    raise NotImplementedError, "get_names нужно реализовать в классе наследнике"
-  end
-
-  def get_data
-    raise NotImplementedError, "get_data must нужно реализовать в классе наследнике"
-  end
 end
+
+def get_selected
+  @selected
+end
+
+def get_names
+  raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
+end
+
+def get_data
+  raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
+end
+
