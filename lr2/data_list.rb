@@ -1,35 +1,32 @@
-class DataList
+class Data_list
 
-  private_class_method :new
+def initialize(*elements)
+  @data = elements.sort
+  @selected = []
+end
 
+def [](index)
+  @data[index]
+end
 
+def size
+  @data.size
+end
+def self.create(*elements)
+  new(*elements)
+end
 
-  def initialize(objects)
-    self.objects_list = objects
-    self.selected_objects = []
-  end
+def select(number)
+  @selected << number
+end
 
-  def select(number)
-    selected_objects.append(number)
-  end
+def each
+  @data.each { |element| yield element }
+end
 
-  def clear_select
-    self.selected_objects = []
-  end
-
-  def get_selected
-    return [] if selected_objects.empty?
-
-    selected_id_list = []
-    selected_objects.each do |num|
-      selected_id_list.append(objects_list[num].id)
-    end
-    selected_id_list
-  end
-
-
-  protected
-
+def get_selected
+  @selected
+end
   def get_names
     raise NotImplementedError, "get_names нужно реализовать в классе наследнике"
   end
@@ -38,7 +35,5 @@ class DataList
     raise NotImplementedError, "get_data нужно реализовать в классе наследнике"
   end
 
-  private
-
-  attr_accessor :selected_objects, :objects_list
 end
+
