@@ -1,12 +1,10 @@
-# frozen_string_literal: true
-
 require 'json'
 
 class StudentShort
-  # стандартные геттеры и сеттеры для класса
+  # стандартные геттеры для класса
   attr_reader :id, :git, :contact, :last_name, :initials
 
-  #конструктор, принимающий аргументы класса student
+  # стандартный конструктор, принимающий аргументов экземпляр класса student
   def initialize(student)
     @id = student.id
 
@@ -16,7 +14,7 @@ class StudentShort
     @contact = student.contact
   end
 
-  # конструктор, принимающий на вход id и строку, с инф
+  # кастомный конструктор, принимающий на вход id и строку, которая содержит всю остальную инф-ю
   def self.from_str(id, str)
     result = JSON.parse(str)
     raise ArgumentError, 'Missing fields: last_name, first_name, paternal_name' unless result.key?('first_name') &&
@@ -27,9 +25,9 @@ class StudentShort
                                  email: result['email'],telegram: result['telegram']))
   end
 
-  #фамилия и инициалы
+  # метод возвращающий фамилию и инициалы у объекта
   def last_name_and_initials
-    "#{last_name} #{initials}"
+    "#{@last_name} #{@initials}"
   end
 
   # метод возвращающий представление объекта в виде строки
@@ -50,9 +48,16 @@ class StudentShort
     !contact.nil?
   end
 
-  def validate
+  def validate?
     git? && contact?
   end
 
-end
+  private
 
+  # def set_contacts(contacts)
+  #   return @contact = contacts['phone'] if contacts.key?('phone')
+  #   return @contact = contacts['telegram'] if contacts.key?('telegram')
+  #   @contact = contacts['email'] if contacts.key?('email')
+  # end
+
+end

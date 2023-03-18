@@ -1,27 +1,38 @@
 require_relative 'student'
+require_relative 'student_short'
 
-student1 = Student.new('Петров', 'Павел', 'Иванович')
-student2 = Student.new('Арбузов', 'Алексей', 'Михайлович', { id: 1, telegram: '@arbalex',phone:'89187652345' })
-student3 = Student.new('Гавриш', 'Анна', 'Николаевна', { id:2, phone: '+79678543657', email: 'gavrish_anna_99@mail.ru', git: '@anna99' })
+def read_from_txt(file_path)
+  raise ArgumentError, 'File not found' unless File.exist?(file_path)
 
-#парсинг
-puts Student.pars_str('{"last_name": "Иванов",
-	"first_name": "Олег", "paternal_name": "Сергеевич", "id": 4, "phone_number": "+79184657374"}')
+  stud_file = File.open(file_path, 'r')
+  result = ''
+  stud_file.each do |line|
+    result << line
+  end
+  stud_file.close
+  students_list = []
+  stud_list = JSON.parse(result)
 
-puts student1
-puts student2
-puts student3
+  stud_list['StudentList'].each do |obj|
+    students_list << Student.init_from_json(obj.to_json)
+  end
+  students_list
+end
 
+def write_to_txt(file_path, student_list)
+  result = '{"StudentList":['
+  student_list.each do |student|
+    result += student.to_json + ","
+  end
+  result = result.chop + "]}"
+  File.write(file_path, result)
+end
 
-puts Student.valid_phone?('+79678543657')
-puts Student.valid_phone?('7865436789056')
+student1 = Student.new('Гавриш', 'Геннадий', 'Алексеевич')
+student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
+student3=StudentShort.new(student2)
+puts(student3.contact)
 
-puts Student.valid_account?('@arbalex')
-puts Student.valid_email?('@fain@mail')
-
-puts student3.contact?
-
-student1.set_contacts({telegram: '@user2000'})
-puts student1# frozen_string_literal: true
-
-
+student_list = [student1, student2]
+puts read_from_txt('/home/kristina/RubymineProjects/RubyProjects/lr2/student_list.txt')
+write_to_txt('/home/kristina/RubymineProjects/RubyProjects/lr2/student_list2.txt', student_list)
