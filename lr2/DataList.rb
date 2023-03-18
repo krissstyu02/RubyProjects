@@ -29,9 +29,13 @@ class DataList
 
   protected
 
-  def get_names; end
+  def get_names;
+    raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
+  end
 
-  def get_data; end
+  def get_data;
+    raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
+  end
 
   private
 
