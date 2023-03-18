@@ -1,5 +1,6 @@
 require_relative 'student'
 require_relative 'student_short'
+require_relative 'dataTable'
 
 def read_from_txt(file_path)
   raise ArgumentError, 'File not found' unless File.exist?(file_path)
@@ -28,11 +29,17 @@ def write_to_txt(file_path, student_list)
   File.write(file_path, result)
 end
 
-student1 = Student.new('Гавриш', 'Геннадий', 'Алексеевич')
-student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
-student3=StudentShort.new(student2)
-puts(student3.contact)
+# student1 = Student.new('Гавриш', 'Геннадий', 'Алексеевич')
+# student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
+# student3=StudentShort.new(student2)
+# puts(student3.contact)
+#
+# student_list = [student1, student2]
+# puts read_from_txt('/home/kristina/RubymineProjects/RubyProjects/lr2/student_list.txt')
+# write_to_txt('/home/kristina/RubymineProjects/RubyProjects/lr2/student_list2.txt', student_list)
 
-student_list = [student1, student2]
-puts read_from_txt('/home/kristina/RubymineProjects/RubyProjects/lr2/student_list.txt')
-write_to_txt('/home/kristina/RubymineProjects/RubyProjects/lr2/student_list2.txt', student_list)
+
+test = [ [1,'One'], [2,'Two']]
+test_table = DataTable.new(test)
+puts test_table
+puts test_table.get_element(0,1)

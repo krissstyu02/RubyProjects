@@ -3,6 +3,7 @@
 class DataList
 
   private_class_method :new
+  #Реализовать сеттер для массива объектов
   attr_writer :objects_list
 
   def initialize(objects)
