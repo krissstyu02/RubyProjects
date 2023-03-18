@@ -28,7 +28,6 @@ class DataTable
   end
 
   private
-
   attr_accessor :table
   attr_writer :rows_count, :cols_count
 

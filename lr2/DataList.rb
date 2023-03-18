@@ -15,9 +15,9 @@ class DataList
     selected_objects.append(number)
   end
 
-  def clear_select
-    self.selected_objects = []
-  end
+  # def clear_select
+  #   self.selected_objects = []
+  # end
 
   def get_selected
     return [] if selected_objects.empty?
@@ -31,29 +31,20 @@ class DataList
 
 # применение паттерна
 def get_data
-  result = []
-  id = 0
-  objects_list.each do |obj|
-    row = []
-    row << id
-    row.push(*table_fields(obj))
-    result << row
-    id += 1
-  end
-  DataTable.new(result)
+  raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
 end
 
 protected
+def get_names
+  raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
+end
 
-def get_names; end
-
-# данный метод необходимо переопределять у наследников
+#данный метод необходимо переопределять у наследников
 def table_fields(object)
   []
 end
 
 private
-
 attr_reader :objects_list
 attr_accessor :selected_objects
 end
