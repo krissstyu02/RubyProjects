@@ -34,7 +34,6 @@ def get_data
   raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
 end
 
-protected
 def get_names
   raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
 end
