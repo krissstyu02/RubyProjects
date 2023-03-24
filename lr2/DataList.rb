@@ -34,14 +34,12 @@ def get_data
   raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
 end
 
-def get_names
-  raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
-end
-
 #данный метод необходимо переопределять у наследников
 def table_fields(object)
   []
 end
+
+
 
 private
 attr_reader :objects_list

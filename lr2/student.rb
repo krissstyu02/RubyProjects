@@ -38,13 +38,19 @@ class Student < StudentShort
 
   # конструктор из json-строки
   def self.init_from_json(str)
-    result = JSON.parse(str)
-    raise ArgumentError, 'Missing fields: last_name, first_name, paternal_name' unless result.key?('first_name') && result.key?('last_name') && result.key?('paternal_name')
+    params = JSON.parse(str, { symbolize_names: true })
+    from_hash(params)
+  end
 
-    last_name = result.delete('last_name')
-    first_name = result.delete('first_name')
-    paternal_name = result.delete('paternal_name')
-    Student.new(last_name, first_name, paternal_name, **result.transform_keys(&:to_sym))
+  #конструктор принимающий хэш
+  def self.from_hash(hash)
+    raise ArgumentError, 'Missing fields: last_name, first_name, paternal_name' unless hash.key?(:first_name) && hash.key?(:last_name) && hash.key?(:paternal_name)
+
+    first_name = hash.delete(:first_name)
+    last_name = hash.delete(:last_name)
+    paternal_name = hash.delete(:paternal_name)
+
+    Student.new(first_name, last_name, paternal_name, **hash)
   end
 
   #сеттеры
