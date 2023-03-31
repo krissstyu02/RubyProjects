@@ -53,6 +53,15 @@ class Student < StudentShort
     Student.new(first_name, last_name, paternal_name, **hash)
   end
 
+  def to_hash
+    attrs = {}
+    %i[last_name first_name paternal_name id phone telegram email git].each do |attr|
+      attr_val = send(attr)
+      attrs[attr] = attr_val unless attr_val.nil?
+    end
+    attrs
+  end
+
   #сеттеры
   def phone=(phone)
     raise ArgumentError, "Incorrect value: phone=#{phone}!" if !phone.nil? && !Student.valid_phone?(phone)
@@ -67,7 +76,7 @@ class Student < StudentShort
   end
 
   def last_name=(last_name)
-    raise ArgumentError, "Incorrect value: last_name=#{last_name}!" if !last_name.nil? && !Student.valid_name?(last_name)
+    raise ArgumentError, "Incorrect value: last_name=#{last_name}" if !last_name.nil? && !Student.valid_name?(last_name)
 
     @last_name = last_name
   end

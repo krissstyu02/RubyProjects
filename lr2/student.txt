@@ -1,0 +1,6 @@
+Иванов Иван Иванович,123456789,@ivanov_ivan,https://github.com/ivanov_ivan,+7 (999) 123-45-67
+Петров Петр Петрович,987654321,@petrov_petr,https://github.com/petrov_petr,+7 (999) 234-56-78
+Сидоров Сидор Сидорович,456789123,@sidorov_sidor,https://github.com/sidorov_sidor,+7 (999) 345-67-89
+Кузнецова Елена Александровна,789123456,@kuznetsova_elena,https://github.com/kuznetsova_elena,+7 (999) 456-78-90
+Смирнов Алексей Игоревич,654321987,@smirnov_aleksey,https://github.com/smirnov_aleksey,+7 (999) 567-89-01
+

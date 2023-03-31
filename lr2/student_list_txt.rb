@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
-require_relative 'student_files_base'
+require_relative 'student_list_strategy'
 require 'json'
-class StudentListTxt < StudentListBase
+class StudentListTxt < StudentListStrategy
   public_class_method :new
 
-  protected
   #преобразование строки в лист
   def str_to_list(str)
-    transform_to_hashes(str.split("\n"))
+    transform_to_hashes(str.split("\n").map(&:chomp))
   end
   #преобразование списка в строку
   def list_to_str(list)
@@ -21,6 +20,7 @@ class StudentListTxt < StudentListBase
   def transform_to_hashes(list_of_strings)
     list_of_hashes = []
     list_of_strings.each do |string|
+      string = string.gsub('"', "")
       hash = {}
       string.split(',').each do |attribute|
         key, value = attribute.split(':').map(&:strip)

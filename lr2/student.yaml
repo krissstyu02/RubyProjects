@@ -1,4 +1,40 @@
-- name: John Smith
-  age: 35
-  email: john.smith@example.com
+- last_name: Иванов
+  first_name: Иван
+  paternal_name: Иванович
+  id: 123456789
+  telegram: '@ivanov_ivan'
+  git: 'https://github.com/ivanov_ivan'
+  phone: '+7 (999) 123-45-67'
+  
+- last_name: Петров
+  first_name: Петр
+  paternal_name: Петрович
+  id: 987654321
+  telegram: '@petrov_petr'
+  git: 'https://github.com/petrov_petr'
+  phone: '+7 (999) 234-56-78'
+  
+- last_name: Сидоров
+  first_name: Сидор
+  paternal_name: Сидорович
+  id: 456789123
+  telegram: '@sidorov_sidor'
+  git: 'https://github.com/sidorov_sidor'
+  phone: '+7 (999) 345-67-89'
+  
+- last_name: Кузнецова
+  first_name: Елена
+  paternal_name: Александровна
+  id: 789123456
+  telegram: '@kuznetsova_elena'
+  git: 'https://github.com/kuznetsova_elena'
+  phone: '+7 (999) 456-78-90'
+  
+- last_name: Смирнов
+  first_name: Алексей
+  paternal_name: Игоревич
+  id: 654321987
+  telegram: '@smirnov_aleksey'
+  git: 'https://github.com/smirnov_aleksey'
+  phone: '+7 (999) 567-89-01'
 

@@ -1,0 +1,38 @@
+[
+  {
+    "last_name": "Иванов",
+    "first_name": "Иван",
+    "paternal_name": "Иванович",
+    "id": 123456789,
+    "telegram": "@ivanov_ivan"
+  },
+  {
+    "last_name": "Петров",
+    "first_name": "Петр",
+    "paternal_name": "Петрович",
+    "id": 987654321,
+    "telegram": "@petrov_petr"
+  },
+  {
+    "last_name": "Сидоров",
+    "first_name": "Сидор",
+    "paternal_name": "Сидорович",
+    "id": 456789123,
+    "telegram": "@sidorov_sidor"
+  },
+  {
+    "last_name": "Кузнецова",
+    "first_name": "Елена",
+    "paternal_name": "Александровна",
+    "id": 789123456,
+    "telegram": "@kuznetsova_elena"
+  },
+  {
+    "last_name": "Смирнов",
+    "first_name": "Алексей",
+    "paternal_name": "Игоревич",
+    "id": 654321987,
+    "telegram": "@smirnov_aleksey"
+  }
+]
+
