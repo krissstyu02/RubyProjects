@@ -18,9 +18,9 @@ puts 'Тест StudentsList (JSON):'
 stud_list_json = StudentListBase.new(StudentListJSON.new)
 stud_list_json.add_student(student1)
 stud_list_json.add_student(student2)
-stud_list_json.write_to_file('student_2.json')
+stud_list_json.write_to_file('./lr2/tests/student_2.json')
 
-stud_list_json.read_from_file('student.json')
+stud_list_json.read_from_file('./lr2/tests/student.json')
 
 puts "Успешно записано и прочитано #{stud_list_json.student_count} студентов:"
 
@@ -31,9 +31,9 @@ stud_list_yaml = StudentListBase.new(StudentListYAML.new)
 stud_list_yaml.add_student(student1)
 stud_list_yaml.add_student(student2)
 
-stud_list_yaml.write_to_file('student_2.yaml')
+stud_list_yaml.write_to_file('./lr2/tests/student_2.yaml')
 
-stud_list_yaml.read_from_file('student.yaml')
+stud_list_yaml.read_from_file('./lr2/tests/student.yaml')
 
 puts "Успешно записано и прочитано #{stud_list_yaml.student_count} студентов:"
 
@@ -45,8 +45,8 @@ stud_list_txt = StudentListBase.new(StudentListTxt.new)
 stud_list_txt.add_student(student1)
 stud_list_txt.add_student(student2)
 
-stud_list_txt.write_to_file('student_2.txt')
+stud_list_txt.write_to_file('./lr2/tests/student_2.txt')
 
-stud_list_txt.read_from_file('student.txt')
+stud_list_txt.read_from_file('./lr2/tests/student.txt')
 
 puts "Успешно записано и прочитано #{stud_list_txt.student_count} студентов:"
