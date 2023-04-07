@@ -1,6 +1,7 @@
 require_relative 'models/student'
 require_relative 'models/student_short'
 require_relative 'data/containers/dataTable'
+require 'mysql2'
 
 def read_from_txt(file_path)
   raise ArgumentError, 'File not found' unless File.exist?(file_path)
@@ -38,8 +39,25 @@ end
 # puts read_from_txt('/home/kristina/RubymineProjects/RubyProjects/Student_project/student_list.txt')
 # write_to_txt('/home/kristina/RubymineProjects/RubyProjects/Student_project/student_list2.txt', student_list)
 
+# test = [ [1,'One'], [2,'Two']]
+# test_table = DataTable.new(test)
+# puts test_table
+# puts test_table.get_element(0,1)
+#
 
-test = [ [1,'One'], [2,'Two']]
-test_table = DataTable.new(test)
-puts test_table
-puts test_table.get_element(0,1)
+
+# Создаем соединение с базой данных
+client = Mysql2::Client.new(
+  :host => 'localhost',
+  :username => 'root',
+  :password => 'Kris110902Star',
+  :database => 'student_db'
+)
+
+# Выполняем SELECT-запрос
+results = client.query('SELECT * FROM students')
+
+# Выводим результаты на экран
+results.each do |row|
+  puts row.inspect
+end
