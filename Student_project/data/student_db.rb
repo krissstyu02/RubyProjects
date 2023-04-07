@@ -57,6 +57,6 @@ db_config = {
 
 db = StudentListDB.new(db_config)
 puts db.student_count
-puts db.student_by_id(1)
+
 
 
