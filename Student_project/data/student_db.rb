@@ -47,14 +47,3 @@ class StudentListDB
   end
 end
 
-
-# db = StudentListDB.new(db_config)
-# puts db.student_count
-
-# student1 = Student.new('Гавриш', 'Геннадий', 'Алексеевич')
-# db.add_student(student1)
-# puts db.student_by_id(1)
-# puts db.remove_student(3)
-# db.replace_student(2,student1)
-# puts db.get_k_n_student_short_list(1,2)
-# Создаем соединение с базой данных
