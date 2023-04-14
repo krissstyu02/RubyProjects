@@ -4,7 +4,7 @@ require_relative '../models/student_short'
 require_relative '../data/containers/data_list_student_short'
 require_relative 'db_connection'
 
-class StudentListDB
+class StudentList_db_Adapter
   def initialize
     @db = DBConnection.instance
   end

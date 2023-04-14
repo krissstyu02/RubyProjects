@@ -64,7 +64,7 @@ end
 
 
 # Создаем экземпляр класса StudentListDB
-student_list = StudentListDB.new
+student_list = StudentList_db_Adapter.new
 
 # Тест метода student_by_id
 student = student_list.student_by_id(1)
