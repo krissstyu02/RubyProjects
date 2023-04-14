@@ -41,6 +41,7 @@ class StudentList_db_Adapter
   end
 
   private
+  attr_accessor :client
 
   def student_fields(student)
     [student.first_name, student.last_name, student.paternal_name, student.phone, student.telegram, student.email, student.git]
