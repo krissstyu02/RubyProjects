@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'DataList'
+require_relative 'dataTable'
 class DataListStudentShort < DataList
     public_class_method :new
 

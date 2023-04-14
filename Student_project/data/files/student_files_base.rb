@@ -28,7 +28,7 @@ class StudentListBase
   end
 
   # Получить список k по счету n  объектов класса Student_short
-  def get_k_n_student_short_list(page, count, current_data_list: nil)
+  def get_k_n_student_short_list(page, count, current_data_list)
     offset = (page - 1) * count # сдвиг элементов массива
     slice = students[offset, count].map { |s| StudentShort.new(s) }
 

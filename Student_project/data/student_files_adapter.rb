@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # frozen_string_literal: true
-require_relative 'student_files_base'
+require_relative 'files/student_files_base'
 class StudentFilesAdapter
   def initialize(data_type, file_path)
     @file = StudentListBase.new(data_type)
@@ -26,7 +26,7 @@ class StudentFilesAdapter
 
   #замена студента по id
   def replace_student(student_id, student)
-    @file.replace_student(student,student_id)
+    @file.replace_student(student_id,student)
     @file.write_to_file(@file_path)
   end
 
