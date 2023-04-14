@@ -2,7 +2,7 @@ require_relative 'models/student'
 require_relative 'models/student_short'
 require_relative 'data/containers/dataTable'
 require 'mysql2'
-require_relative './data/student_db'
+require_relative './data/student_db_adapter'
 
 def read_from_txt(file_path)
   raise ArgumentError, 'File not found' unless File.exist?(file_path)
