@@ -58,12 +58,15 @@ class Window < FXMainWindow
 
     # ФИЛЬТР ИМЕНИ
     name_label = FXLabel.new(@frame_filter, "Фамилия и инициалы")
-    name_text_field = FXTextField.new(@frame_filter, 40)
+    name_text_field = FXTextField.new(@frame_filter, 64)
     @filter = { short_name: name_text_field }
+
+
 
     # Фильтрация для остальных полей
     field_filter.each do |field|
       @filter[field[0]] = create_radio_group(field, @frame_filter)
+
     end
 
   end
@@ -112,14 +115,14 @@ class Window < FXMainWindow
     # Заполняем таблицу данными
     data = [
       ["Apple", "@apple", "apple@example.com"],
-      ["Banana", "@banana", "banana@example.com"],
+      ["Nanana", "@banana", "banana@example.com"],
       ["Cherry", "@cherry", "cherry@example.com"],
       ["Durian", "@durian", "durian@example.com"],
       ["Elderberry", "@elderberry", "elderberry@example.com"],
-      ["Fig", "@fig", "fig@example.com"],
+      ["Gig", "@fig", "fig@example.com"],
       ["Grape", "@grape", "grape@example.com"],
       ["Honeydew", "@honeydew", "honeydew@example.com"],
-      ["Jackfruit", "@jackfruit", "jackfruit@example.com"],
+      ["Rackfruit", "@jackfruit", "jackfruit@example.com"],
       ["Kiwi", "@kiwi", "kiwi@example.com"]
     ]
     data.each_with_index do |row, i|
@@ -174,28 +177,22 @@ class Window < FXMainWindow
     btn_edit.disable
     btn_delete.disable
 
-  #   # Функция, которая будет вызвана при выделении строки в таблице
-  #   def on_table_select(sender, sel, event)
-  #     # Если выделена одна строка, то делаем кнопки изменить и удалить доступными
-  #     if sender.sel == 1
-  #       btn_edit.enable
-  #       btn_delete.enable
-  #       # Если выделено больше одной строки, то делаем кнопку изменить неактивной
-  #       # и оставляем доступной только кнопку удалить
-  #     elsif sender.sel> 1
-  #       btn_edit.disable
-  #       btn_delete.enable
-  #       # Если ни одна строка не выделена, то делаем обе кнопки неактивными
-  #     else
-  #       btn_edit.disable
-  #       btn_delete.disable
-  #     end
-  #   end
-  #
-  #   # Подключаем функцию к событию выделения строки в таблице
-  #   table.connect(SEL_COMMAND) do |sender, sel, event|
-  #     on_table_select(sender, sel, event)
-  #   end
+
+    table.connect(SEL_CHANGED) do
+      num_selected_rows = 0
+      (0...table.getNumRows()).each { |row_index| num_selected_rows+=1 if table.rowSelected?(row_index)}
+
+      # Если выделена только одна строка, кнопка должна быть неактивной
+      if num_selected_rows == 1
+        btn_edit.enable
+        btn_delete.enable
+        # Если выделено несколько строк, кнопка должна быть активной
+      elsif num_selected_rows >1
+        btn_edit.disable
+        btn_delete.enable
+      end
+    end
+
   end
 
   #сортировка таблицы по столбцу
