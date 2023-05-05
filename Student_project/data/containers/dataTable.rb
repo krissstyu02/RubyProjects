@@ -2,7 +2,7 @@
 
 class DataTable
 
-  attr_reader :rows_count, :cols_count
+  attr_reader :rows_count, :cols_count,:table
 
   def initialize(table)
 
@@ -21,6 +21,12 @@ class DataTable
     return nil if col >= cols_count || col.negative?
 
     table[row][col]
+  end
+
+  def each(&block)
+    table.each do |row|
+      block.call(row)
+    end
   end
 
   def to_s

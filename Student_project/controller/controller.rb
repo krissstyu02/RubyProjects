@@ -3,16 +3,26 @@
 require_relative '../views/interface'
 require_relative '../data/student_list'
 require_relative '../data/student_db_adapter'
+require_relative'../data/containers/data_list_student_short'
 class StudentListController
   def initialize(view)
     @view = view
-  end
-
-  def view_create
+    @data_list = DataListStudentShort.new([])
+    @data_list.add_observer(@view)
     @student_list = StudentList.new(StudentList_db_Adapter.new)
   end
 
-  def show_view
-    @view.create.run
+  def on_view_create
+
   end
+
+  def show_view
+    @view.show
+  end
+
+  def refresh_data(k_page, number_students)
+    @data_list = @student_list.get_k_n_student_short_list(k_page, number_students, @data_list)
+    @view.update_count_students(@student_list.student_count)
+  end
+
 end

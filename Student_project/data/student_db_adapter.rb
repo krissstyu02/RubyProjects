@@ -34,10 +34,12 @@ class StudentList_db_Adapter
     @db.query('SELECT COUNT(id) FROM students').first.values.first
   end
 
-  def get_k_n_student_short_list(k,n)
+  def get_k_n_student_short_list(k,n,data_list)
     students = @db.prepare('SELECT * FROM students LIMIT ? OFFSET ?').execute((k-1)*n,n)
     slice = students.map { |h| StudentShort.new(Student.from_hash(h)) }
-    DataListStudentShort.new(slice)
+    DataListStudentShort.new(slice) if data_list.nil?
+    data_list.replace_objects(slice)
+    data_list
   end
 
   private

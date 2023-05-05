@@ -9,6 +9,15 @@ class DataList
   def initialize(objects)
     self.objects_list = objects
     self.selected_objects = []
+    @observers = []
+  end
+
+  def add_observer(observer)
+    @observers.append(observer)
+  end
+
+  def notify
+    @observers.each { |observer| observer.on_datalist_changed(get_data) }
   end
 
   def select(number)
@@ -37,11 +46,14 @@ end
 #данный метод необходимо переопределять у наследников
 def table_fields(object)
   []
-end
+  end
+  def replace_objects(objects_list)
+    self.objects_list=objects_list.dup
+  end
 
 
 
-private
+  private
 attr_reader :objects_list
 attr_accessor :selected_objects
 end

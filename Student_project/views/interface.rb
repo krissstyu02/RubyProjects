@@ -5,8 +5,12 @@ class Window < FXMainWindow
   def initialize(app)
     super(app, "Students", width: 1100, height: 800) # увеличиваем размер главного окна
     @students_on_page=15
+    @current_page=1
+    @count_student=0
     @controller = StudentListController.new(self)
-
+    create_tabs
+  end
+  def create_tabs
     # Создаем FXTabBook в главном горизонтальном фрейме
     tab_book = FXTabBook.new(self, :opts=>LAYOUT_FILL_X|LAYOUT_FILL_Y)
 
@@ -21,7 +25,6 @@ class Window < FXMainWindow
     # composite1 = FXComposite.new(tab_book, LAYOUT_FILL_X|LAYOUT_FILL_Y)
     @first_tab = FXVerticalFrame.new(composite1)
     @first_tab.resize(1000, 700)
-    @count_page = 3
     first_tab
 
     # Create the second tab
@@ -37,6 +40,23 @@ class Window < FXMainWindow
   def create
     super
     show
+    @controller.refresh_data(@current_page, @students_on_page)
+    @controller.show_view
+  end
+
+
+  def update_count_students(count_students)
+    @count_student = count_students
+    #изменить отображение страниц
+
+  end
+
+  def on_datalist_changed(table)
+    row_number=0
+    table.each do |row|
+      row_number+=1
+      (1..3).each { |index_field| @table.setItemText(row_number, index_field-1, row[index_field].to_s)  }
+    end
   end
 
   private
@@ -88,8 +108,11 @@ class Window < FXMainWindow
     btn_back.textColor = FXRGB(0, 0, 0)
     btn_back.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
+
+    change_page = FXHorizontalFrame.new(table_frame, :opts=> LAYOUT_CENTER_X)
+    res=Array(1..@current_page).join(',')
     # Создаем метку с номером текущей страницы
-    page_label = FXLabel.new(page_controls, "1-#{@count_page}")
+    page_label = FXLabel.new(change_page, res)
     page_label.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
 
@@ -101,17 +124,17 @@ class Window < FXMainWindow
 
 
     # Создаем таблицу
-    table = FXTable.new(table_frame,
+    @table = FXTable.new(table_frame,
                         :opts => TABLE_READONLY | LAYOUT_FIX_WIDTH | LAYOUT_FIX_HEIGHT | TABLE_COL_SIZABLE | TABLE_ROW_RENUMBER,
                         :width => 700, :height => 300)
-    table.setTableSize(10, 3)
-    table.backColor = FXRGB(255, 255, 255)
-    table.textColor = FXRGB(0, 0, 0)
+    @table.setTableSize(10, 3)
+    @table.backColor = FXRGB(255, 255, 255)
+    @table.textColor = FXRGB(0, 0, 0)
 
     # Задаем названия столбцов таблицы
-    table.setColumnText(0, "ФИО")
-    table.setColumnText(1, "Git")
-    table.setColumnText(2, "Контакт")
+    @table.setColumnText(0, "ФИО")
+    @table.setColumnText(1, "Git")
+    @table.setColumnText(2, "Контакт")
 
     # Заполняем таблицу данными
     data = [
@@ -128,24 +151,24 @@ class Window < FXMainWindow
     ]
     data.each_with_index do |row, i|
       row.each_with_index do |cell, j|
-        table.setItemText(i, j, cell)
+        @table.setItemText(i, j, cell)
       end
     end
     # 700 300
     # Масштабируем таблицу
-    table.setRowHeaderWidth(50)
-    table.setColumnWidth(0, 200)
-    table.setColumnWidth(1, 200)
-    table.setColumnWidth(2, 248)
+    @table.setRowHeaderWidth(50)
+    @table.setColumnWidth(0, 200)
+    @table.setColumnWidth(1, 200)
+    @table.setColumnWidth(2, 248)
 
     # Создаем обработчик событий для сортировки таблицы по столбцу при нажатии на заголовок столбца
-    table.getColumnHeader.connect(SEL_COMMAND) do |a, b, col|
-      sort_table_by_column(table, col)
+    @table.getColumnHeader.connect(SEL_COMMAND) do |a, b, col|
+      sort_table_by_column(@table, col)
     end
 
     # Создаем обработчик событий для сброса выделения при переключении страниц
     page_controls.connect(SEL_COMMAND) do
-      table.killSelection
+      @table.killSelection
     end
 
     page_controls = FXHorizontalFrame.new(table_frame, :opts => LAYOUT_CENTER_X)
@@ -179,9 +202,9 @@ class Window < FXMainWindow
     btn_delete.disable
 
     # обработчик
-    table.connect(SEL_CHANGED) do
+    @table.connect(SEL_CHANGED) do
       num_selected_rows = 0
-      (0...table.getNumRows()).each { |row_index| num_selected_rows+=1 if table.rowSelected?(row_index)}
+      (0...@table.getNumRows()).each { |row_index| num_selected_rows+=1 if @table.rowSelected?(row_index)}
 
       # Если выделена только одна строка, кнопка должна быть неактивной
       if num_selected_rows == 1
