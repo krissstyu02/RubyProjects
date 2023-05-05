@@ -10,14 +10,37 @@ class Window < FXMainWindow
     @controller = StudentListController.new(self)
     create_tabs
   end
+
+  def create
+    super
+    @controller.refresh_data(@current_page, @students_on_page)
+    show
+  end
+
+
+  def update_count_students(count_students)
+    @count_student = count_students
+    @page_label.text = "#{@current_page} / #{(@count_student / @students_on_page.to_f).ceil}"
+    #изменить отображение страниц
+
+  end
+
+  def on_datalist_changed(table)
+    row_number=0
+    table.each do |row|
+      (1..3).each { |index_field| @table.setItemText(row_number, index_field-1, row[index_field].to_s)  }
+      row_number+=1
+    end
+  end
+
+  private
+
   def create_tabs
     # Создаем FXTabBook в главном горизонтальном фрейме
     tab_book = FXTabBook.new(self, :opts=>LAYOUT_FILL_X|LAYOUT_FILL_Y)
 
     # tab_book = FXTabBook.new(self, nil, 0, LAYOUT_FILL_X|LAYOUT_FILL_Y)
     tab_book.backColor = FXRGB(240, 240, 240) # меняем цвет фона вкладок
-
-
 
     # Create the first tab
     tab1 = FXTabItem.new(tab_book, "Вкладка 1", nil)
@@ -36,30 +59,6 @@ class Window < FXMainWindow
     @composite3 = FXComposite.new(tab_book, LAYOUT_FILL_X|LAYOUT_FILL_Y)
 
   end
-
-  def create
-    super
-    show
-    @controller.refresh_data(@current_page, @students_on_page)
-    @controller.show_view
-  end
-
-
-  def update_count_students(count_students)
-    @count_student = count_students
-    #изменить отображение страниц
-
-  end
-
-  def on_datalist_changed(table)
-    row_number=0
-    table.each do |row|
-      row_number+=1
-      (1..3).each { |index_field| @table.setItemText(row_number, index_field-1, row[index_field].to_s)  }
-    end
-  end
-
-  private
 
   def first_tab
     add_filters
@@ -90,7 +89,6 @@ class Window < FXMainWindow
     end
 
   btn_clear = FXButton.new(frame_filter, "Очистить", :opts=>BUTTON_NORMAL)
-
   end
 
 
@@ -101,20 +99,16 @@ class Window < FXMainWindow
 
     # Создаем горизонтальный фрейм для элементов управления страницами
     page_controls = FXHorizontalFrame.new(table_frame, :opts => LAYOUT_CENTER_X)
-
     # Создаем кнопку "Назад"
     btn_back = FXButton.new(page_controls, "Назад", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y | LAYOUT_LEFT)
     btn_back.backColor = FXRGB(255, 255, 255)
     btn_back.textColor = FXRGB(0, 0, 0)
     btn_back.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
-
+    #номер страницы
     change_page = FXHorizontalFrame.new(table_frame, :opts=> LAYOUT_CENTER_X)
-    res=Array(1..@current_page).join(',')
-    # Создаем метку с номером текущей страницы
-    page_label = FXLabel.new(change_page, res)
-    page_label.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
-
+    @page_label = FXLabel.new(change_page, '1')
+    @page_label.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
     # Создаем кнопку "Далее"
     btn_next = FXButton.new(page_controls, "Далее", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y | LAYOUT_RIGHT)
@@ -166,13 +160,13 @@ class Window < FXMainWindow
       sort_table_by_column(@table, col)
     end
 
+
     # Создаем обработчик событий для сброса выделения при переключении страниц
     page_controls.connect(SEL_COMMAND) do
       @table.killSelection
     end
 
     page_controls = FXHorizontalFrame.new(table_frame, :opts => LAYOUT_CENTER_X)
-
     # Создаем кнопку "Добавить"
     btn_add = FXButton.new(page_controls, "Добавить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
     btn_add.backColor = FXRGB(255, 255, 255)

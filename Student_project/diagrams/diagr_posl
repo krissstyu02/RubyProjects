@@ -1,0 +1,65 @@
+@startuml
+participant "main.rb"                       as main
+
+boundary    "wd: Window"               as wd
+control     "slc: StudentListController"    as slc
+entity      "dlss: DataListStudentShort"    as dlss
+entity      "sl: StudentList"       as sl
+entity      "slda: StudentListDbAdapter"         as slda
+entity      "DB"            as db
+
+database    DB                              as db_source
+
+main -> wd : <<new>>
+wd -> slc : <<new>>(self)
+slc -> dlss: <<new>>(Array)
+dlss --> slc
+slc -> dlss : add_observer(Window)
+dlss --> slc
+slc-> slda: <<new>>
+slda-> db: <<instance>>
+db->db: <<new>>
+db->db_source: [open]
+db_source-->db
+db-->slda
+slda-->slc
+slc -> sl : <<new>>(StudentListDbAdapter)
+sl-->slc
+slc-->wd
+wd-->main
+
+main -> wd : create()
+wd -> slc: refresh_data(Integer, Integer)
+slc ->sl : get_k_n_student_short_list(Integer, Integer, DataListStudentShort)
+sl ->slda : get_k_n_student_short_list(Integer, Integer, DataListStudentShort)
+slda -> db: execute(String, Integer,Integer)
+db->db_source: [SELECT]
+db_source --> db
+db-->slda
+slda-> dlss: <<new>>(Array)
+dlss-->slda
+slda-> dlss : replace_objects(Array)
+dlss->wd: on_data_list_changed(DataTable)
+wd-->dlss
+dlss-->slda
+slda-->sl
+sl-->slc
+
+slc->sl: student_count()
+sl->slda : student_count()
+slda->db: execute(String)
+db->db_source: [SELECT]
+db_source-->db
+db-->slda
+slda-->sl
+sl-->slc
+
+slc-> wd: update_count_students(Integer)
+wd-->slc
+slc-->wd
+wd->wd: <<show>>
+wd-->main
+main->wd: <<run>>
+wd-->main
+
+@enduml

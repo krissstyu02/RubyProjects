@@ -12,13 +12,6 @@ class StudentListController
     @student_list = StudentList.new(StudentList_db_Adapter.new)
   end
 
-  def on_view_create
-
-  end
-
-  def show_view
-    @view.show
-  end
 
   def refresh_data(k_page, number_students)
     @data_list = @student_list.get_k_n_student_short_list(k_page, number_students, @data_list)

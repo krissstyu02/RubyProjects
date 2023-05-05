@@ -2,7 +2,7 @@
 
 class DataTable
 
-  attr_reader :rows_count, :cols_count,:table
+  attr_reader :rows_count, :cols_count
 
   def initialize(table)
 
