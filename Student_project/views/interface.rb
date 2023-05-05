@@ -106,7 +106,7 @@ class Window < FXMainWindow
     btn_back.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
     #номер страницы
-    change_page = FXHorizontalFrame.new(table_frame, :opts=> LAYOUT_CENTER_X)
+    change_page = FXHorizontalFrame.new(page_controls, :opts=> LAYOUT_CENTER_X)
     @page_label = FXLabel.new(change_page, '1')
     @page_label.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
@@ -120,10 +120,12 @@ class Window < FXMainWindow
     # Создаем таблицу
     @table = FXTable.new(table_frame,
                         :opts => TABLE_READONLY | LAYOUT_FIX_WIDTH | LAYOUT_FIX_HEIGHT | TABLE_COL_SIZABLE | TABLE_ROW_RENUMBER,
-                        :width => 700, :height => 300)
+                        :width => 700, :height => 250)
     @table.setTableSize(10, 3)
     @table.backColor = FXRGB(255, 255, 255)
     @table.textColor = FXRGB(0, 0, 0)
+
+
 
     # Задаем названия столбцов таблицы
     @table.setColumnText(0, "ФИО")
@@ -161,35 +163,36 @@ class Window < FXMainWindow
     end
 
 
-    # Создаем обработчик событий для сброса выделения при переключении страниц
-    page_controls.connect(SEL_COMMAND) do
-      @table.killSelection
-    end
-
-    page_controls = FXHorizontalFrame.new(table_frame, :opts => LAYOUT_CENTER_X)
+    page_controls2 = FXHorizontalFrame.new(table_frame, :opts => LAYOUT_CENTER_X)
     # Создаем кнопку "Добавить"
-    btn_add = FXButton.new(page_controls, "Добавить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_add = FXButton.new(page_controls2, "Добавить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
     btn_add.backColor = FXRGB(255, 255, 255)
     btn_add.textColor = FXRGB(0, 0, 0)
     btn_add.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
     # Создаем кнопку "Изменить"
-    btn_edit = FXButton.new(page_controls, "Изменить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_edit = FXButton.new(page_controls2, "Изменить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
     btn_edit.backColor = FXRGB(255, 255, 255)
     btn_edit.textColor = FXRGB(0, 0, 0)
     btn_edit.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
     # Создаем кнопку "Удалить"
-    btn_delete = FXButton.new(page_controls, "Удалить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_delete = FXButton.new(page_controls2, "Удалить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
     btn_delete.backColor = FXRGB(255, 255, 255)
     btn_delete.textColor = FXRGB(0, 0, 0)
     btn_delete.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
     # Создаем кнопку "Обновить"
-    btn_refresh = FXButton.new(page_controls, "Обновить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_refresh = FXButton.new(page_controls2, "Обновить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
     btn_refresh.backColor = FXRGB(255, 255, 255)
     btn_refresh.textColor = FXRGB(0, 0, 0)
     btn_refresh.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
+
+    # Создаем обработчик событий для сброса выделения при переключении страниц
+    page_controls.connect(SEL_COMMAND) do
+      @table.killSelection
+    end
+
 
     # Делаем кнопки изменить и удалить неактивными по умолчанию
     btn_edit.disable
