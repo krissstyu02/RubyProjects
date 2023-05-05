@@ -1,13 +1,14 @@
 require 'fox16'
 include Fox
-
+require_relative '../controller/controller'
 class Window < FXMainWindow
   def initialize(app)
     super(app, "Students", width: 1100, height: 800) # увеличиваем размер главного окна
-    main_frame = FXHorizontalFrame.new(self, LAYOUT_FILL_X | LAYOUT_FILL_Y)
+    @students_on_page=15
+    @controller = StudentListController.new(self)
 
     # Создаем FXTabBook в главном горизонтальном фрейме
-    tab_book = FXTabBook.new(main_frame, nil, 0, LAYOUT_FILL_X|LAYOUT_FILL_Y)
+    tab_book = FXTabBook.new(self, :opts=>LAYOUT_FILL_X|LAYOUT_FILL_Y)
 
     # tab_book = FXTabBook.new(self, nil, 0, LAYOUT_FILL_X|LAYOUT_FILL_Y)
     tab_book.backColor = FXRGB(240, 240, 240) # меняем цвет фона вкладок
@@ -35,7 +36,7 @@ class Window < FXMainWindow
 
   def create
     super
-    show(PLACEMENT_SCREEN)
+    show
   end
 
   private
@@ -47,8 +48,8 @@ class Window < FXMainWindow
 
   def add_filters
     # Filter
-    @frame_filter = FXVerticalFrame.new(@first_tab,:opts => LAYOUT_CENTER_X)
-    @frame_filter.resize(1000, 300)
+    frame_filter = FXVerticalFrame.new(@first_tab,:opts => LAYOUT_CENTER_X)
+    frame_filter.resize(1000, 300)
 
     field_filter = [  [:git, "Гит"],
                       [:email, "Почта"],
@@ -57,20 +58,20 @@ class Window < FXMainWindow
     ]
 
     # ФИЛЬТР ИМЕНИ
-    name_label = FXLabel.new(@frame_filter, "Фамилия и инициалы")
-    name_text_field = FXTextField.new(@frame_filter, 64)
+    name_label = FXLabel.new(frame_filter, "Фамилия и инициалы")
+    name_text_field = FXTextField.new(frame_filter, 64)
     @filter = { short_name: name_text_field }
-
 
 
     # Фильтрация для остальных полей
     field_filter.each do |field|
-      @filter[field[0]] = create_radio_group(field, @frame_filter)
+      @filter[field[0]] = create_radio_group(field, frame_filter)
 
     end
 
-  end
+  btn_clear = FXButton.new(frame_filter, "Очистить", :opts=>BUTTON_NORMAL)
 
+  end
 
 
   def add_table
@@ -177,7 +178,7 @@ class Window < FXMainWindow
     btn_edit.disable
     btn_delete.disable
 
-
+    # обработчик
     table.connect(SEL_CHANGED) do
       num_selected_rows = 0
       (0...table.getNumRows()).each { |row_index| num_selected_rows+=1 if table.rowSelected?(row_index)}
@@ -219,7 +220,7 @@ class Window < FXMainWindow
     radio_no_matter = FXRadioButton.new(line_radio, "Не важно")
     #фильтр
     text_field = FXTextField.new(line_radio, 40)
-    #прописываем доступность
+    #прописываем доступность(тоже обработчик)
     text_field.setEnabled(false)
     radio_yes.connect(SEL_COMMAND) do
       radio_no.check=false
@@ -245,7 +246,3 @@ class Window < FXMainWindow
     frame_field
   end
 end
-app = FXApp.new
-Window.new(app)
-app.create
-app.run

@@ -3,6 +3,7 @@ require_relative 'models/student_short'
 require_relative 'data/containers/dataTable'
 require 'mysql2'
 require_relative './data/student_db_adapter'
+require_relative 'views/interface'
 
 def read_from_txt(file_path)
   raise ArgumentError, 'File not found' unless File.exist?(file_path)
@@ -64,28 +65,29 @@ end
 
 
 # Создаем экземпляр класса StudentListDB
-student_list = StudentList_db_Adapter.new
+# student_list = StudentList_db_Adapter.new
+#
+# # Тест метода student_by_id
+# student = student_list.student_by_id(1)
+# puts student.inspect
+#
+# # Тест метода add_student
+# student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
+# id = student_list.add_student(student2)
+# puts "New student id: #{id}"
+#
+# # # Тест метода replace_student
+#
+# student_list.replace_student(4,student2)
+#
+#
+# # Тест метода remove_student
+# student_list.remove_student(5)
+# deleted_student = student_list.student_by_id(id)
+# puts "Удален студент"+deleted_student.inspect
 
-# Тест метода student_by_id
-student = student_list.student_by_id(1)
-puts student.inspect
-
-# Тест метода add_student
-student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
-id = student_list.add_student(student2)
-puts "New student id: #{id}"
-
-# # Тест метода replace_student
-
-student_list.replace_student(4,student2)
-
-
-# Тест метода remove_student
-student_list.remove_student(5)
-deleted_student = student_list.student_by_id(id)
-puts "Удален студент"+deleted_student.inspect
-
-
+app = FXApp.new
+Window.new(app)
 
 
 
