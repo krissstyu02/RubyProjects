@@ -4,14 +4,17 @@ require_relative '../views/interface'
 require_relative '../data/student_list'
 require_relative '../data/student_db_adapter'
 require_relative'../data/containers/data_list_student_short'
-
+require_relative '../data/student_files_adapter'
 class StudentListController
   def initialize(view)
     @view = view
     @data_list = DataListStudentShort.new([])
     @data_list.add_observer(@view)
     @student_list = StudentList.new(StudentList_db_Adapter.new)
+    adapter_path = '\home\kristina\RubymineProjects\RubyProjects\Student_project\test_files\student.json'
+    # @student_list = StudentList.new(StudentFilesAdapter.new(StudentListJSON.new, adapter_path))
   end
+
 
 
   def refresh_data(k_page, number_students)

@@ -13,15 +13,17 @@ class Window < FXMainWindow
 
   def create
     super
-    @controller.refresh_data(@current_page, @students_on_page)
+    # @controller.refresh_data(@current_page, @students_on_page)
+    refresh
     show
   end
 
 
   def update_count_students(count_students)
     @count_student = count_students
-    @page_label.text = "#{@current_page} / #{(@count_student / @students_on_page.to_f).ceil}"
+    # @page_label.text = "#{@current_page} / #{(@count_student / @students_on_page.to_f).ceil}"
     #изменить отображение страниц
+    update_page_label
   end
 
   def on_datalist_changed(table)
@@ -68,8 +70,10 @@ class Window < FXMainWindow
       # Обновляем данные в соответствии с текущей вкладкой
       case current_tab_index
       when 0
+
+        refresh
         # для первой вкладки
-        @controller.refresh_data(@current_page, @students_on_page)
+        # @controller.refresh_data(@current_page, @students_on_page)
         # when 1
         #   # для второй вкладки
         #   @controller.refresh_data_for_tab2
@@ -143,6 +147,7 @@ class Window < FXMainWindow
                         :opts => TABLE_READONLY | LAYOUT_FIX_WIDTH | LAYOUT_FIX_HEIGHT | TABLE_COL_SIZABLE | TABLE_ROW_RENUMBER,
                         :width => 700, :height => 250)
     @table.setTableSize(10, 3)
+    @table.setTableSize(@students_on_page, 3)
     @table.backColor = FXRGB(255, 255, 255)
     @table.textColor = FXRGB(0, 0, 0)
 
@@ -244,6 +249,21 @@ class Window < FXMainWindow
       refresh
     end
 
+    btn_back.connect(SEL_COMMAND) do
+      if @current_page!=1
+        @current_page-=1
+        refresh
+        update_page_label
+      end
+    end
+    btn_next.connect(SEL_COMMAND) do
+      if @current_page<(@count_student / @students_on_page.to_f).ceil
+        @current_page+=1
+        refresh
+        update_page_label
+      end
+    end
+
   end
 
   #сортировка таблицы по столбцу
@@ -302,4 +322,13 @@ class Window < FXMainWindow
     end
     frame_field
   end
+
+  def refresh
+    @controller.refresh_data(@current_page, @students_on_page)
+  end
+  def update_page_label
+    @page_label.text = "#{@current_page} / #{(@count_student / @students_on_page.to_f).ceil}"
+  end
+
+
 end

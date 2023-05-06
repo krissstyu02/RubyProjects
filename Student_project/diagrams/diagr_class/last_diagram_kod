@@ -1,3 +1,6 @@
+@startuml
+'https://plantuml.com/class-diagram
+
 class StudentShort
 {
     -last_name: String
@@ -202,6 +205,61 @@ class StudentListFileAdapter {
      +student_count(): Integer
 }
 
+class SrudentListController {
+     view: interface
+     data:DataListStudentShort
+     student_list:StudentList
+     --
+     +initialize(Window)
+     +refresh_data(Integer,Integer)
+   
+ }
+
+
+SrudentListController o-- StudentList
+SrudentListController o-- DataList
+
+class SrudentListController {
+     view: interface
+     data:DataListStudentShort
+     student_list:StudentList
+     --
+     +initialize(Window)
+     +refresh_data(Integer,Integer)
+   
+ }
+
+class Interface {
+     students_on_page:Integer
+     current_page:Integer
+     count_student:Integer
+     controller:StudentListController
+     first_tab:FXHorizontalFrame
+     page_lavel:FXLabel
+     filter:Hash
+     table:FXTable
+     --
+     +initialize(FXApp)
+     +create()
+     +update_count_students(Integer)
+     +on_datalist_changed(DataTable)
+     -create_tabs()
+     -first_tab()
+     -add_filters()
+     -add_table()
+     -add_crud(FXFrame)
+     -page_change_buttons(FXFrame)
+     -sort_table_by_column(FXTable,Integer)
+     -create_radio_groups(Hash,FXFrame)
+     -refresh()
+     -update_page_label()
+     
+   
+ }
+
+Interface *-- SrudentListController
+SrudentListController *-- Interface
+
 DataList ..> DataTable
 StudentListBase *-- StudentListStrategy
 DataListStudentShort o-- StudentShort
@@ -211,3 +269,4 @@ StudentList *-- StudentList_db_Adapter
 StudentListFileAdapter o-- StudentListBase
 StudentList *-- StudentListFileAdapter
 StudentListBase ..> DataListStudentShort
+@enduml
