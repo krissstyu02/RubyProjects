@@ -7,7 +7,23 @@ require_relative 'views/interface'
 
 def read_from_txt(file_path)
   raise ArgumentError, 'File not found' unless File.exist?(file_path)
-
+data = [
+      ["Apple", "@apple", "apple@example.com"],
+      ["Nanana", "@banana", "banana@example.com"],
+      ["Cherry", "@cherry", "cherry@example.com"],
+      ["Durian", "@durian", "durian@example.com"],
+      ["Elderberry", "@elderberry", "elderberry@example.com"],
+      ["Gig", "@fig", "fig@example.com"],
+      ["Grape", "@grape", "grape@example.com"],
+      ["Honeydew", "@honeydew", "honeydew@example.com"],
+      ["Rackfruit", "@jackfruit", "jackfruit@example.com"],
+      ["Kiwi", "@kiwi", "kiwi@example.com"]
+    ]
+    data.each_with_index do |row, i|
+      row.each_with_index do |cell, j|
+        @table.setItemText(i, j, cell)
+      end
+    end
   stud_file = File.open(file_path, 'r')
   result = ''
   stud_file.each do |line|

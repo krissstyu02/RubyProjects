@@ -44,10 +44,10 @@ class Student < StudentShort
 
   #конструктор принимающий хэш
   def self.from_hash(hash)
-    raise ArgumentError, 'Missing fields: last_name, first_name, paternal_name' unless hash.key?(:first_name) && hash.key?(:last_name) && hash.key?(:paternal_name)
+    raise ArgumentError, 'Missing fields: last_name, first_name, paternal_name' unless hash.key?(:last_name) && hash.key?(:first_name) && hash.key?(:paternal_name)
 
-    first_name = hash.delete(:first_name)
     last_name = hash.delete(:last_name)
+    first_name = hash.delete(:first_name)
     paternal_name = hash.delete(:paternal_name)
 
     Student.new(last_name, first_name, paternal_name, **hash)

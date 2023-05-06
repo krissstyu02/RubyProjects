@@ -7,7 +7,6 @@ class StudentShort
   # стандартный конструктор, принимающий аргументов экземпляр класса student
   def initialize(student)
     @id = student.id
-
     @last_name = student.last_name
     @initials = "#{student.first_name[0]}. #{student.paternal_name[0]}."
     @git = student.git unless student.git.nil?

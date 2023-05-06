@@ -35,10 +35,14 @@ class StudentList_db_Adapter
   end
 
   def get_k_n_student_short_list(k,n,data_list)
-    students = @db.prepare('SELECT * FROM students LIMIT ? OFFSET ?').execute((k-1)*n,n)
-    slice = students.map { |h| StudentShort.new(Student.from_hash(h)) }
+    students = @db.query("SELECT * FROM students LIMIT #{(k-1)*n}, #{n}")
+    students2=students.map(&:to_h)
+    slice = students2.map { |h| StudentShort.new(Student.from_hash(h.transform_keys(&:to_sym))) }
     DataListStudentShort.new(slice) if data_list.nil?
+    # student = student_list.student_by_id(1)
+    # puts student.inspect
     data_list.replace_objects(slice)
+    puts data_list
     data_list
   end
 

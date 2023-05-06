@@ -24,31 +24,46 @@ class DataList
     selected_objects.append(number)
   end
 
-  # def clear_select
-  #   self.selected_objects = []
-  # end
-
-  def get_selected
-    return [] if selected_objects.empty?
-
-    selected_id_list = []
-    selected_objects.each do |num|
-      selected_id_list.append(objects_list[num].id)
-    end
-    selected_id_list
+  def clear_select
+    self.selected_objects = []
   end
 
+  def get_select
+    objects_list[selected_objects].id
+  end
+
+  def get_names; end
+
+  # def get_selected
+  #   return [] if selected_objects.empty?
+  #
+  #   selected_id_list = []
+  #   selected_objects.each do |num|
+  #     selected_id_list.append(objects_list[num].id)
+  #   end
+  #   selected_id_list
+  # end
+
 # применение паттерна
-def get_data
-  raise NotImplementedError, "Данный метод необходимо реализовать в классе наследнике"
-end
+  def get_data
+    index_id=0
+    dt = objects_list.inject([]) do |res, object|
+      row=[index_id]
+      row.append(*get_fields(object))
+      index_id+=1
+      res<<row
+    end
+    DataTable.new(dt)
+  end
 
 #данный метод необходимо переопределять у наследников
 def table_fields(object)
   []
-  end
+end
+
   def replace_objects(objects_list)
     self.objects_list=objects_list.dup
+    notify
   end
 
 

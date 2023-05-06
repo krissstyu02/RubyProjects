@@ -4,7 +4,7 @@ require_relative '../controller/controller'
 class Window < FXMainWindow
   def initialize(app)
     super(app, "Students", width: 1100, height: 800) # увеличиваем размер главного окна
-    @students_on_page=15
+    @students_on_page=6
     @current_page=1
     @count_student=0
     @controller = StudentListController.new(self)
@@ -22,11 +22,15 @@ class Window < FXMainWindow
     @count_student = count_students
     @page_label.text = "#{@current_page} / #{(@count_student / @students_on_page.to_f).ceil}"
     #изменить отображение страниц
-
   end
 
   def on_datalist_changed(table)
     row_number=0
+    (0...@table.getNumRows).each do |row|
+      (0...@table.getNumColumns).each do |col|
+        @table.setItemText(row, col, "")
+      end
+    end
     table.each do |row|
       (1..3).each { |index_field| @table.setItemText(row_number, index_field-1, row[index_field].to_s)  }
       row_number+=1
@@ -143,30 +147,29 @@ class Window < FXMainWindow
     @table.textColor = FXRGB(0, 0, 0)
 
 
-
     # Задаем названия столбцов таблицы
     @table.setColumnText(0, "ФИО")
     @table.setColumnText(1, "Git")
     @table.setColumnText(2, "Контакт")
 
     # Заполняем таблицу данными
-    data = [
-      ["Apple", "@apple", "apple@example.com"],
-      ["Nanana", "@banana", "banana@example.com"],
-      ["Cherry", "@cherry", "cherry@example.com"],
-      ["Durian", "@durian", "durian@example.com"],
-      ["Elderberry", "@elderberry", "elderberry@example.com"],
-      ["Gig", "@fig", "fig@example.com"],
-      ["Grape", "@grape", "grape@example.com"],
-      ["Honeydew", "@honeydew", "honeydew@example.com"],
-      ["Rackfruit", "@jackfruit", "jackfruit@example.com"],
-      ["Kiwi", "@kiwi", "kiwi@example.com"]
-    ]
-    data.each_with_index do |row, i|
-      row.each_with_index do |cell, j|
-        @table.setItemText(i, j, cell)
-      end
-    end
+    # data = [
+    #   ["Apple", "@apple", "apple@example.com"],
+    #   ["Nanana", "@banana", "banana@example.com"],
+    #   ["Cherry", "@cherry", "cherry@example.com"],
+    #   ["Durian", "@durian", "durian@example.com"],
+    #   ["Elderberry", "@elderberry", "elderberry@example.com"],
+    #   ["Gig", "@fig", "fig@example.com"],
+    #   ["Grape", "@grape", "grape@example.com"],
+    #   ["Honeydew", "@honeydew", "honeydew@example.com"],
+    #   ["Rackfruit", "@jackfruit", "jackfruit@example.com"],
+    #   ["Kiwi", "@kiwi", "kiwi@example.com"]
+    # ]
+    # data.each_with_index do |row, i|
+    #   row.each_with_index do |cell, j|
+    #     @table.setItemText(i, j, cell)
+    #   end
+    # end
     # 700 300
     # Масштабируем таблицу
     @table.setRowHeaderWidth(50)
@@ -229,6 +232,16 @@ class Window < FXMainWindow
         btn_edit.disable
         btn_delete.enable
       end
+    end
+
+    @table.getRowHeader.connect(SEL_RIGHTBUTTONPRESS) do
+      @table.killSelection(true)
+      btn_edit.disable
+      btn_delete.disable
+    end
+
+    btn_refresh.connect(SEL_COMMAND) do
+      refresh
     end
 
   end

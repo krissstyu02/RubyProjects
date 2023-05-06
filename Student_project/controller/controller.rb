@@ -20,7 +20,6 @@ class StudentListController
     rescue Mysql2::Error => e
       puts "No connection to DB: #{e.message}"
       exit(false)
-
   end
     @view.update_count_students(@student_list.student_count)
   end
