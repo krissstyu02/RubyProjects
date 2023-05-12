@@ -29,7 +29,11 @@ class DataList
   end
 
   def get_select
-    objects_list[selected_objects].id
+    selected_objects.inject([]) {|res, index| res<<objects_list[index].id}
+  end
+
+  def clear_selected
+    self.selected_objects = []
   end
 
   def get_names; end

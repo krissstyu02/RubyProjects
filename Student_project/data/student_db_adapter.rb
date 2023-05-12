@@ -10,10 +10,12 @@ class StudentList_db_Adapter
   end
 
   def student_by_id(student_id)
+    student_id = student_id.first.to_i
     result = @db.query("SELECT * FROM students WHERE id = #{student_id}").first
     return Student.from_hash(result.transform_keys(&:to_sym)) if result
     nil
   end
+
 
   def add_student(student)
     stmt = @db.prepare('INSERT INTO students (first_name, last_name, paternal_name, phone, telegram, email, git) VALUES (?, ?, ?, ?, ?, ?, ?)')

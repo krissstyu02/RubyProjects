@@ -231,7 +231,7 @@ class Window < FXMainWindow
     end
 
     btn_add.connect(SEL_COMMAND) do
-      @controller.show_add_dialog
+      @controller.student_add
     end
 
     btn_refresh.connect(SEL_COMMAND) do
@@ -251,6 +251,16 @@ class Window < FXMainWindow
         refresh
         update_page_label
       end
+    end
+
+    btn_edit.connect(SEL_COMMAND) do
+      index = (0...@table.getNumRows).find {|row_index| @table.rowSelected?(row_index)}
+      @controller.student_update(index)
+    end
+
+    btn_delete.connect(SEL_COMMAND) do
+      indexes = (0...@table.getNumRows).select{|row_index| @table.rowSelected?(row_index)}
+      @controller.student_delete(indexes)
     end
 
   end
