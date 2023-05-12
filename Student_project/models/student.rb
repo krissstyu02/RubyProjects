@@ -36,6 +36,7 @@ class Student < StudentShort
     set_contacts(phone: phone, email: email, telegram: telegram)
   end
 
+
   # конструктор из json-строки
   def self.init_from_json(str)
     params = JSON.parse(str, { symbolize_names: true })

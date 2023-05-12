@@ -1,9 +1,9 @@
 # frozen_string_literal: true
-
 require_relative '../models/student'
 class AddStudentController
-  def initialize(parent)
-    @main_controller = parent
+
+  def initialize(student_list)
+    @student_list = student_list
   end
 
   #привязка view
@@ -11,28 +11,37 @@ class AddStudentController
     @view = view
   end
 
-  def validate_fields(fields)
-    begin
-      student = Student.new(**fields)
-      puts "student student"
-      return student
-
-    rescue ArgumentError => e
-      # puts "no validate"
-      return false
-    end
+  def execute
+    @view.execute
   end
-  # def validate_fields(field_key, field_data)
-  #   case field_key
-  #   when :first_name || :second_name || :last_name
-  #     return Student.validate_name?(field_data)
-  #   when :phone
-  #     return Student.validate_phone?(field_data)
-  #   when :telegram || :git
-  #     return Student.validate_account?(field_data)
-  #   when :email
-  #     return Student.validate_email?(field_data)
-  #   end
-  # end
-  #
+
+  def save_student(student)
+    @student_list.add_student(student)
+  end
+
+
+  def validate_fields(fields)
+    required_fields = [:last_name, :first_name, :paternal_name] # список обязательных полей
+    if required_fields.all? { |field| fields.key?(field) }
+      student = Student.new(
+        fields[:last_name],
+        fields[:first_name],
+        fields[:paternal_name],
+        id: fields[:id] || nil,
+        git: fields[:git] || nil,
+        phone: fields[:phone] || nil,
+        email: fields[:email] || nil,
+        telegram: fields[:telegram] || nil
+      )
+      puts(student)
+      return student
+    else
+      return nil
+    end
+  rescue ArgumentError => e
+    return nil
+  end
+
+
+
 end

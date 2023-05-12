@@ -39,6 +39,10 @@ class Window < FXMainWindow
     end
   end
 
+  def refresh
+    @controller.refresh_data(@current_page, @students_on_page)
+  end
+
   private
 
   def create_tabs
@@ -157,25 +161,6 @@ class Window < FXMainWindow
     @table.setColumnText(1, "Git")
     @table.setColumnText(2, "Контакт")
 
-    # Заполняем таблицу данными
-    # data = [
-    #   ["Apple", "@apple", "apple@example.com"],
-    #   ["Nanana", "@banana", "banana@example.com"],
-    #   ["Cherry", "@cherry", "cherry@example.com"],
-    #   ["Durian", "@durian", "durian@example.com"],
-    #   ["Elderberry", "@elderberry", "elderberry@example.com"],
-    #   ["Gig", "@fig", "fig@example.com"],
-    #   ["Grape", "@grape", "grape@example.com"],
-    #   ["Honeydew", "@honeydew", "honeydew@example.com"],
-    #   ["Rackfruit", "@jackfruit", "jackfruit@example.com"],
-    #   ["Kiwi", "@kiwi", "kiwi@example.com"]
-    # ]
-    # data.each_with_index do |row, i|
-    #   row.each_with_index do |cell, j|
-    #     @table.setItemText(i, j, cell)
-    #   end
-    # end
-    # 700 300
     # Масштабируем таблицу
     @table.setRowHeaderWidth(50)
     @table.setColumnWidth(0, 200)
@@ -245,8 +230,12 @@ class Window < FXMainWindow
       btn_delete.disable
     end
 
+    btn_add.connect(SEL_COMMAND) do
+      @controller.show_add_dialog
+    end
+
     btn_refresh.connect(SEL_COMMAND) do
-      refresh
+      @controller.refresh_data(@current_page, @students_on_page)
     end
 
     btn_back.connect(SEL_COMMAND) do
@@ -323,9 +312,6 @@ class Window < FXMainWindow
     frame_field
   end
 
-  def refresh
-    @controller.refresh_data(@current_page, @students_on_page)
-  end
   def update_page_label
     @page_label.text = "#{@current_page} / #{(@count_student / @students_on_page.to_f).ceil}"
   end
