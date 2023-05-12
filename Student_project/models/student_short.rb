@@ -1,5 +1,5 @@
 require 'json'
-
+require_relative 'student'
 class StudentShort
   # стандартные геттеры для класса
   attr_reader :id, :git, :contact, :last_name, :initials
@@ -36,6 +36,8 @@ class StudentShort
     result += contact unless contact.nil?
     result
   end
+
+
 
   # метод проверяющий наличие гита
   def git?

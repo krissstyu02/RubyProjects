@@ -33,8 +33,8 @@ class StudentListBase
     slice = students[offset, count].map { |s| StudentShort.new(s) }
 
     return DataListStudentShort.new(slice) if current_data_list.nil?
-
-    current_data_list.append(slice)
+    current_data_list.replace_objects(slice)
+    current_data_list
   end
 
   # сортировка по фамилии и инициалам

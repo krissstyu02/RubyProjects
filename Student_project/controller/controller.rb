@@ -5,14 +5,21 @@ require_relative '../data/student_list'
 require_relative '../data/student_db_adapter'
 require_relative'../data/containers/data_list_student_short'
 require_relative '../data/student_files_adapter'
+require_relative 'add_controller'
+require_relative '../views/dialog_create_student'
+require_relative '../data/files/strategy/student_list_json'
+require_relative '../data/files/strategy/student_list_txt'
+require_relative '../data/files/strategy/student_list_yaml'
+require 'fox16'
+include Fox
 class StudentListController
   def initialize(view)
     @view = view
     @data_list = DataListStudentShort.new([])
     @data_list.add_observer(@view)
-    @student_list = StudentList.new(StudentList_db_Adapter.new)
-    adapter_path = '\home\kristina\RubymineProjects\RubyProjects\Student_project\test_files\student.json'
-    # @student_list = StudentList.new(StudentFilesAdapter.new(StudentListJSON.new, adapter_path))
+    # @student_list = StudentList.new(StudentList_db_Adapter.new)
+    adapter_path = '/home/kristina/RubymineProjects/RubyProjects/Student_project/test_files/student.yaml'
+    @student_list = StudentList.new(StudentFilesAdapter.new(StudentListYAML.new, adapter_path))
   end
 
 
