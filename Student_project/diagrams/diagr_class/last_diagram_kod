@@ -257,6 +257,66 @@ class Interface {
    
  }
 
+class AddStudentController {
+view: CreateStudentDialog
+student_list: StudentList
+--
+     +initialize()
+        +add_view(CreateStudentController)
++validate_fields(Hash):Student
++execute()
++save_student(Student)
+
+}
+
+class CreateStudentDialog {
+controller
+student: Student
+field_text:Hash
+--
+     +initialize()
+        +set_student(Student)
+-add_fields()
+-enter_student
+}
+
+class ChangeStudentController {
+student_id:Integer
+--
+     -initialize()
+        +add_view(CreateStudentDiolog)
++save_student(Student)
+-get_editable_fields()
+}
+
+class ChangeStudentGitController {
+     +initialize(StudentList,Integer)
+-get_editable_fields():Array
+}
+
+
+class ChangeStudentNameController {
+     +initialize(StudentList,Integer)
+-get_editable_fields():Array
+}
+
+class ChangeStudentContactController {
+     +initialize(StudentList,Integer)
+-get_editable_fields():Array
+}
+
+AddStudentController o-- ChangeStudentController
+
+ChangeStudentController o-- ChangeStudentContactController
+ChangeStudentController o-- ChangeStudentNameController
+ChangeStudentController o-- ChangeStudentGitController
+
+ChangeStudentController *-- CreateStudentDialog
+CreateStudentDialog *-- ChangeStudentController
+
+AddStudentController *-- CreateStudentDialog
+CreateStudentDialog *-- AddStudentController
+
 Interface *-- SrudentListController
 SrudentListController *-- Interface
 
