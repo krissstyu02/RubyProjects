@@ -12,9 +12,9 @@ require_relative '../data/files/strategy/student_list_txt'
 require_relative '../data/files/strategy/student_list_yaml'
 require_relative '../models/student'
 require_relative 'update_controller'
-require_relative 'update_name_controller'
-require_relative 'update_git_controller'
-require_relative 'update_contact_controller'
+require_relative 'update/update_name_controller'
+require_relative 'update/update_git_controller'
+require_relative 'update/update_contact_controller'
 require 'fox16'
 include Fox
 class StudentListController
