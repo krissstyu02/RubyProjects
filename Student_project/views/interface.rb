@@ -181,10 +181,10 @@ class Window < FXMainWindow
     btn_add.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
     # Создаем кнопку "Изменить"
-    btn_edit = FXButton.new(page_controls2, "Изменить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
-    btn_edit.backColor = FXRGB(255, 255, 255)
-    btn_edit.textColor = FXRGB(0, 0, 0)
-    btn_edit.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
+    # btn_edit = FXButton.new(page_controls2, "Изменить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    # btn_edit.backColor = FXRGB(255, 255, 255)
+    # btn_edit.textColor = FXRGB(0, 0, 0)
+    # btn_edit.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
     # Создаем кнопку "Удалить"
     btn_delete = FXButton.new(page_controls2, "Удалить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
@@ -192,6 +192,7 @@ class Window < FXMainWindow
     btn_delete.textColor = FXRGB(0, 0, 0)
     btn_delete.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
+    combo_change = FXComboBox.new(page_controls2, 20, :opts=>  FRAME_SUNKEN|FRAME_THICK|LAYOUT_SIDE_TOP|LAYOUT_FILL_X)
     # Создаем кнопку "Обновить"
     btn_refresh = FXButton.new(page_controls2, "Обновить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
     btn_refresh.backColor = FXRGB(255, 255, 255)
@@ -205,8 +206,12 @@ class Window < FXMainWindow
 
 
     # Делаем кнопки изменить и удалить неактивными по умолчанию
-    btn_edit.disable
     btn_delete.disable
+    combo_change.disable
+
+    combo_change.appendItem("Изменить ФИО")
+    combo_change.appendItem("Изменить Git")
+    combo_change.appendItem("Изменить контакт")
 
     # обработчик
     @table.connect(SEL_CHANGED) do
@@ -215,18 +220,18 @@ class Window < FXMainWindow
 
       # Если выделена только одна строка, кнопка должна быть неактивной
       if num_selected_rows == 1
-        btn_edit.enable
+        combo_change.enable
         btn_delete.enable
         # Если выделено несколько строк, кнопка должна быть активной
       elsif num_selected_rows >1
-        btn_edit.disable
+        combo_change.disable
         btn_delete.enable
       end
     end
 
     @table.getRowHeader.connect(SEL_RIGHTBUTTONPRESS) do
       @table.killSelection(true)
-      btn_edit.disable
+      combo_change.disable
       btn_delete.disable
     end
 
@@ -253,10 +258,19 @@ class Window < FXMainWindow
       end
     end
 
-    btn_edit.connect(SEL_COMMAND) do
+    combo_change.connect(SEL_COMMAND) do
       index = (0...@table.getNumRows).find {|row_index| @table.rowSelected?(row_index)}
-      @controller.student_update(index)
-    end
+      case combo_change.currentItem
+      when 0
+        @controller.student_change_name(index)
+      when 1
+        @controller.student_change_git(index)
+      when 2
+        @controller.student_change_contact(index)
+      end
+      end
+
+
 
     btn_delete.connect(SEL_COMMAND) do
       indexes = (0...@table.getNumRows).select{|row_index| @table.rowSelected?(row_index)}

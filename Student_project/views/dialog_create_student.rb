@@ -17,9 +17,9 @@ class CreateStudentDialog<FXDialogBox
     # setModal(true)
   end
 
-  def set_student(student)
+  def set_student(student,editable_fields)
     @student=student
-    enter_student
+    enter_student(editable_fields)
   end
 
   private
@@ -83,11 +83,12 @@ class CreateStudentDialog<FXDialogBox
 
   end
 
-  def enter_student
+  def enter_student(editable_fields)
     unless @student.nil?
       student_hash = @student.to_hash
       @field_text.each_key do |name_field|
-        unless name_field==:first_name || name_field==:second_name || name_field==:last_name
+          puts "fields #{name_field}"
+          unless editable_fields.include?(name_field)
           @field_text[name_field].editable = false
         end
         @field_text[name_field].text = student_hash[name_field]
