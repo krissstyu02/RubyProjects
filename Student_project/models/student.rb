@@ -55,13 +55,13 @@ class Student < StudentShort
   end
 
   def to_hash
-    attrs = {}
-    %i[last_name first_name paternal_name id phone telegram email git].each do |attr|
-      attr_val = send(attr)
-      attrs[attr] = attr_val unless attr_val.nil?
+    info_hash = {}
+    %i[last_name first_name paternal_name id phone telegram email git].each do |field|
+      info_hash[field] = send(field) unless send(field).nil?
     end
-    attrs
+    info_hash
   end
+
 
   #сеттеры
   def phone=(phone)
