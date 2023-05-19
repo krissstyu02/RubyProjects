@@ -103,10 +103,13 @@ end
 # deleted_student = student_list.student_by_id(id)
 # puts "Удален студент"+deleted_student.inspect
 
-app = FXApp.new
-Window.new(app)
-app.create
-app.run
+# app = FXApp.new
+# Window.new(app)
+# app.create
+# app.run
 
-
-
+require_relative 'models/student_lab'
+require_relative 'lab_model/labs'
+lab1 = Lab.new(**{number: 3, name: 'Лаба333', date_load: '2023-10-21'})
+db=StudentLab.new
+db.add_lab(lab1)

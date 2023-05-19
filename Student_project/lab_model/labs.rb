@@ -23,6 +23,7 @@ class Lab
     info_hash
   end
 
+  def self.validate_is_date(); end
 
 
 

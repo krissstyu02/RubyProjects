@@ -7,7 +7,7 @@ class DataListStudentLab<DataList
 
   protected
   def get_fields(object)
-    [object.id, object.git, object.find_contact]
+    [object.number, object.name, object.date_load]
   end
 
 end

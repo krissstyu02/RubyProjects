@@ -23,6 +23,9 @@ class DBConnection
   def query(sql)
     @client.query(sql)
   end
+
+
+
   #запросы к базе данных,
   def prepare(sql)
     @client.prepare(sql)

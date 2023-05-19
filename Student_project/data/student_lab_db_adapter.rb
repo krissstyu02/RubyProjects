@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require_relative 'db_connection'
+
+
 class StudentLabDbAdapter
   def initialize
     self.db =DBConnection.instance

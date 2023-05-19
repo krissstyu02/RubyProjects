@@ -18,7 +18,8 @@ class StudentList_db_Adapter
 
 
   def add_student(student)
-    stmt = @db.prepare('INSERT INTO students (first_name, last_name, paternal_name, phone, telegram, email, git) VALUES (?, ?, ?, ?, ?, ?, ?)')
+    stmt = @db.prepare('INSERT INTO students (first_name, last_name, paternal_name, phone,
+    telegram, email, git) VALUES (?, ?, ?, ?, ?, ?, ?)')
     stmt.execute(*student_fields(student))
     @db.last_id
   end
@@ -28,9 +29,25 @@ class StudentList_db_Adapter
   end
 
   def replace_student(student_id, student)
-    stmt = @db.prepare('UPDATE students SET first_name = ?, last_name = ?, paternal_name = ?, phone = ?, telegram = ?, email = ?, git = ? WHERE id = ?')
+    query = <<~SQL
+    UPDATE students
+    SET first_name = ?,
+        last_name = ?,
+        paternal_name = ?,
+        phone = ?,
+        telegram = ?,
+        email = ?,
+        git = ?
+    WHERE id = ?
+    SQL
+
+    stmt = @db.prepare(query)
     stmt.execute(*student_fields(student), student_id)
   end
+
+
+
+
 
   def student_count
     @db.query('SELECT COUNT(id) FROM students').first.values.first

@@ -1,8 +1,10 @@
 require 'fox16'
 include Fox
 require_relative '../controller/controller'
-require_relative 'labs'
+require_relative 'tab_labs'
 require_relative 'tab_students'
+
+
 class Window < FXMainWindow
   def initialize(app)
     super(app, "Students", width: 900, height: 900) # увеличиваем размер главного окна
