@@ -8,23 +8,21 @@ class Student < StudentShort
 
   # валидаТОР номера телефона
   def self.valid_phone?(phone)
-    phone.match(/^\+?[7,8] ?\(?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/)
+    /\A\+?[7,8] ?\(?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}\z/.match?(phone)
   end
 
-  # валидаТОР имени
   def self.valid_name?(name)
-    name.match(/^[А-Я][а-я]+$/)
+    /\A[А-Я][а-я]+\z/.match?(name)
   end
 
-  # валидаТОР профиля
   def self.valid_account?(account)
-    account.match(/^@[A-Za-z0-9\-_]+$/)
+    /\A@[A-Za-z0-9\-_]+\z/.match?(account)
   end
 
-  # валидаТОР почты
   def self.valid_email?(email)
-    email.match(/^[A-Za-z0-9\-_]+@[A-Za-z]+\.([A-Za-z]+\.)*[A-Za-z]+$/)
+    /\A[A-Za-z0-9\-_]+@[A-Za-z]+\.([A-Za-z]+\.)*[A-Za-z]+\z/.match?(email)
   end
+
 
   # стандартный конструктор
   def initialize(last_name, first_name, paternal_name, id: nil, git: nil, phone: nil, email: nil, telegram: nil)

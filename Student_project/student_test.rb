@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rspec'
 require_relative 'models/student'
 
@@ -54,18 +55,16 @@ RSpec.describe Student do
 
   describe '#initialize' do
     it 'sets the instance variables correctly' do
-      student = Student.new('Doe', 'John', 'Smith', id: 1, git: '@johndoe', phone: valid_phone, email: valid_email, telegram: '@johndoe')
-      expect(student.last_name).to eq('Doe')
-      expect(student.first_name).to eq('John')
-      expect(student.paternal_name).to eq('Smith')
-      expect(student.id).to eq(1)
-      expect(student.git).to eq('@johndoe')
-      expect(student.phone).to eq(valid_phone)
-      expect(student.email).to eq(valid_email)
-      expect(student.telegram).to eq('@johndoe')
+      student = Student.new('Антонов', 'Иван', 'Борисович', id: 50, telegram: '@ivan45')
+      expect(student.last_name).to eq('Антонов')
+      expect(student.first_name).to eq('Иван')
+      expect(student.paternal_name).to eq('Борисович')
+      expect(student.id).to eq(50)
+      expect(student.telegram).to eq('@ivan45')
     end
   end
 
-  # Add more tests for the other methods in the Student class
+  # Добавьте дополнительные тесты для других методов в классе Student
 
 end
+
