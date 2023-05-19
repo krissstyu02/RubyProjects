@@ -1,0 +1,6 @@
+# Logfile created on 2023-05-19 14:36:07 +0300 by logger.rb/61378
+I, [2023-05-19T14:36:07.288492 #12185]  INFO -- : Adding view to update student controller
+I, [2023-05-19T14:36:12.850563 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:36:13.128199 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:36:14.305126 #12185]  INFO -- : Saving updated student
+I, [2023-05-19T14:36:14.306308 #12185]  INFO -- : Executing add student operation

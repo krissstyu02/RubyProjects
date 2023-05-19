@@ -17,6 +17,9 @@ require_relative 'update/update_git_controller'
 require_relative 'update/update_contact_controller'
 require 'fox16'
 include Fox
+require 'logger'
+
+
 class StudentListController
   def initialize(view)
     @view = view
@@ -25,16 +28,22 @@ class StudentListController
     @student_list = StudentList.new(StudentList_db_Adapter.new)
     adapter_path = '/home/kristina/RubymineProjects/RubyProjects/Student_project/test_files/student.yaml'
     # @student_list = StudentList.new(StudentFilesAdapter.new(StudentListYAML.new, adapter_path))
+    @logger = Logger.new('controller.log') # Указывает путь и имя файла для логов
   end
+
 
 
 
   def refresh_data(k_page, number_students)
     begin
+    @logger.info("Refreshing data with k_page=#{k_page} and number_students=#{number_students}")
     @data_list = @student_list.get_k_n_student_short_list(k_page, number_students, @data_list)
     rescue Mysql2::Error => e
+      @logger.error("Error occurred while refreshing data: #{e.message}")
       puts "No connection to DB: #{e.message}"
       exit(false)
+    else
+      @logger.info("Data refreshed successfully with k_page=#{k_page} and number_students=#{number_students}")
   end
     @view.update_count_students(@student_list.student_count)
   end
@@ -56,6 +65,7 @@ class StudentListController
 
   public
   def student_change_name(index)
+    @logger.info('Changing student name')
     puts 'update name'
     id = get_student_id(index)
     controller = ChangeStudentNameController.new(@student_list, id)
@@ -63,6 +73,7 @@ class StudentListController
   end
 
   def student_change_git(index)
+    @logger.info('Changing student Git')
     puts 'update git'
     id = get_student_id(index)
     controller = ChangeStudentGitController.new(@student_list, id)
@@ -70,6 +81,7 @@ class StudentListController
   end
 
   def student_change_contact(index)
+    @logger.info('Changing student contact')
     puts 'update name'
     id = get_student_id(index)
     controller = ChangeStudentContactController.new(@student_list, id)
@@ -84,6 +96,7 @@ class StudentListController
 
     id_list.each{|student_id| @student_list.remove_student(student_id)}
     @view.refresh
+    @logger.info("Deleted students with IDs: #{id_list.join(', ')}")
   end
 
   private

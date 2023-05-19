@@ -1,0 +1,30 @@
+# Logfile created on 2023-05-19 14:35:34 +0300 by logger.rb/61378
+I, [2023-05-19T14:35:38.551236 #12185]  INFO -- : Validating fields
+E, [2023-05-19T14:35:38.551459 #12185] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=К!
+I, [2023-05-19T14:35:38.987782 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:39.250977 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:39.583316 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:39.767324 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:39.971809 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:40.203739 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:40.335228 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:42.531128 #12185]  INFO -- : Validating fields
+E, [2023-05-19T14:35:42.531323 #12185] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=С
+I, [2023-05-19T14:35:42.982514 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:43.218898 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:43.715428 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:44.116440 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:44.285090 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:46.147410 #12185]  INFO -- : Validating fields
+E, [2023-05-19T14:35:46.147632 #12185] ERROR -- : Error occurred while validating fields: Incorrect value: paternal_name=В!
+I, [2023-05-19T14:35:46.424061 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:46.714807 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:47.025301 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:47.185423 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:47.932624 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:48.245337 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:48.434015 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:48.627128 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:49.047982 #12185]  INFO -- : Validating fields
+I, [2023-05-19T14:35:50.686977 #12185]  INFO -- : Saving student
+I, [2023-05-19T14:35:50.692216 #12185]  INFO -- : Executing add student operation
