@@ -92,6 +92,8 @@ class CreateStudentDialog<FXDialogBox
           @field_text[name_field].editable = false
           end
           @field_text[name_field].text = student_hash[name_field]
+          puts(student_hash[name_field])
+
       end
     end
   end

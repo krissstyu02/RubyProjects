@@ -49,7 +49,7 @@ def write_to_txt(file_path, student_list)
 end
 
 # student1 = Student.new('Гавриш', 'Геннадий', 'Алексеевич')
-# student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
+# student2 = Student.new('Петровв', 'Иван', 'Борисович', { id: 40, telegram: '@ivan45' })
 # student3=StudentShort.new(student2)
 # puts(student3.contact)
 #
@@ -82,21 +82,22 @@ end
 
 # Создаем экземпляр класса StudentListDB
 # student_list = StudentList_db_Adapter.new
-#
-# # Тест метода student_by_id
+
+# Тест метода student_by_id
 # student = student_list.student_by_id(1)
 # puts student.inspect
-#
+
 # # Тест метода add_student
 # student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
 # id = student_list.add_student(student2)
 # puts "New student id: #{id}"
-#
-# # # Тест метода replace_student
-#
+
+# # Тест метода replace_student
+
 # student_list.replace_student(4,student2)
-#
-#
+
+
+
 # # Тест метода remove_student
 # student_list.remove_student(5)
 # deleted_student = student_list.student_by_id(id)

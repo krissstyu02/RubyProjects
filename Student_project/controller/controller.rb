@@ -50,6 +50,7 @@ class StudentListController
 
 
   def student_add
+    @logger.info('Add student')
     controller = AddStudentController.new(@student_list)
     show_dialog(controller)
   end

@@ -27,3 +27,219 @@ I, [2023-05-19T14:36:14.306397 #12185]  INFO -- : Refreshing data with k_page=1 
 I, [2023-05-19T14:36:14.307173 #12185]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
 I, [2023-05-19T14:36:15.689875 #12185]  INFO -- : Refreshing data with k_page=1 and number_students=6
 I, [2023-05-19T14:36:15.690897 #12185]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:39:01.095296 #12556]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:39:01.096538 #12556]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:39:07.457372 #12556]  INFO -- : Changing student name
+I, [2023-05-19T14:39:14.350641 #12556]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:39:14.351345 #12556]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:39:16.602178 #12556]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:39:16.603091 #12556]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:42:08.806219 #12793]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:42:08.807496 #12793]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:42:13.576654 #12793]  INFO -- : Changing student name
+I, [2023-05-19T14:42:21.771356 #12793]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:42:21.772202 #12793]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:42:42.114341 #12828]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:42:42.115528 #12828]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:42:46.555490 #12828]  INFO -- : Changing student name
+I, [2023-05-19T14:42:56.374160 #12828]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:42:56.374795 #12828]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:45:17.059843 #12904]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:45:17.061159 #12904]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T14:45:20.529864 #12904]  INFO -- : Changing student name
+I, [2023-05-19T14:45:30.178822 #12904]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T14:45:30.179612 #12904]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:40:49.573230 #14271]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:13.478530 #14303]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:13.479622 #14303]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:41:18.027126 #14303]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:18.027910 #14303]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:41:18.029419 #14303]  INFO -- : Deleted students with IDs: 15
+I, [2023-05-19T15:41:20.385011 #14303]  INFO -- : Changing student name
+I, [2023-05-19T15:41:26.154459 #14303]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:26.155288 #14303]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:41:32.622811 #14303]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:32.623866 #14303]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:41:33.805983 #14303]  INFO -- : Refreshing data with k_page=2 and number_students=6
+I, [2023-05-19T15:41:33.807012 #14303]  INFO -- : Data refreshed successfully with k_page=2 and number_students=6
+I, [2023-05-19T15:41:34.156135 #14303]  INFO -- : Refreshing data with k_page=3 and number_students=6
+I, [2023-05-19T15:41:34.157204 #14303]  INFO -- : Data refreshed successfully with k_page=3 and number_students=6
+I, [2023-05-19T15:41:34.853412 #14303]  INFO -- : Refreshing data with k_page=2 and number_students=6
+I, [2023-05-19T15:41:34.854356 #14303]  INFO -- : Data refreshed successfully with k_page=2 and number_students=6
+I, [2023-05-19T15:41:35.163862 #14303]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:35.164823 #14303]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:41:39.294100 #14303]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:39.294995 #14303]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:41:59.726021 #14303]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:41:59.726870 #14303]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:42:02.320860 #14303]  INFO -- : Refreshing data with k_page=2 and number_students=6
+I, [2023-05-19T15:42:02.321937 #14303]  INFO -- : Data refreshed successfully with k_page=2 and number_students=6
+I, [2023-05-19T15:42:02.530699 #14303]  INFO -- : Refreshing data with k_page=3 and number_students=6
+I, [2023-05-19T15:42:02.531736 #14303]  INFO -- : Data refreshed successfully with k_page=3 and number_students=6
+I, [2023-05-19T15:45:51.733570 #14743]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:45:51.734758 #14743]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:45:56.647202 #14743]  INFO -- : Changing student name
+I, [2023-05-19T15:46:16.076093 #14743]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:46:16.076911 #14743]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:47:05.918689 #14806]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T15:47:05.919806 #14806]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T15:47:09.719359 #14806]  INFO -- : Changing student name
+I, [2023-05-19T16:04:09.118648 #15586]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:04:09.119726 #15586]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:04:12.893709 #15586]  INFO -- : Changing student name
+I, [2023-05-19T16:04:22.989916 #15586]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:04:22.990610 #15586]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:10:45.304128 #16997]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:10:45.305301 #16997]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:10:51.140452 #16997]  INFO -- : Changing student name
+I, [2023-05-19T16:10:58.473885 #16997]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:10:58.474643 #16997]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:11:19.292821 #16997]  INFO -- : Refreshing data with k_page=2 and number_students=6
+I, [2023-05-19T16:11:19.293792 #16997]  INFO -- : Data refreshed successfully with k_page=2 and number_students=6
+I, [2023-05-19T16:11:19.755328 #16997]  INFO -- : Refreshing data with k_page=3 and number_students=6
+I, [2023-05-19T16:11:19.756311 #16997]  INFO -- : Data refreshed successfully with k_page=3 and number_students=6
+I, [2023-05-19T16:11:21.849618 #16997]  INFO -- : Refreshing data with k_page=2 and number_students=6
+I, [2023-05-19T16:11:21.850565 #16997]  INFO -- : Data refreshed successfully with k_page=2 and number_students=6
+I, [2023-05-19T16:11:22.186485 #16997]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:11:22.187408 #16997]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:11:40.384303 #16997]  INFO -- : Changing student name
+I, [2023-05-19T16:11:52.038569 #16997]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:11:52.039299 #16997]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:13:12.858552 #16997]  INFO -- : Changing student name
+I, [2023-05-19T16:13:19.506492 #16997]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:13:19.507155 #16997]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:13:32.889709 #16997]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:13:32.890705 #16997]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:33:31.724311 #18024]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:33:31.725332 #18024]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:33:38.479967 #18024]  INFO -- : Changing student contact
+I, [2023-05-19T16:33:47.590901 #18024]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:33:47.591650 #18024]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:33:52.731418 #18024]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:33:52.732350 #18024]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:34:23.121554 #18086]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:34:23.122731 #18086]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:34:30.264021 #18086]  INFO -- : Changing student Git
+I, [2023-05-19T16:34:45.981619 #18086]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:34:45.982405 #18086]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:34:50.713760 #18086]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:34:50.714690 #18086]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:37:57.859905 #18267]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:37:57.860897 #18267]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:38:01.962431 #18267]  INFO -- : Changing student name
+I, [2023-05-19T16:38:10.356112 #18267]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:38:10.356902 #18267]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:38:45.757858 #18354]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:38:45.758890 #18354]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:38:50.562207 #18354]  INFO -- : Changing student name
+I, [2023-05-19T16:39:56.691939 #18429]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:39:56.693281 #18429]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:40:00.342055 #18429]  INFO -- : Changing student name
+I, [2023-05-19T16:40:21.535493 #18429]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:40:21.536273 #18429]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:41:34.292765 #18512]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:41:34.293781 #18512]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:41:39.043010 #18512]  INFO -- : Changing student name
+I, [2023-05-19T16:42:06.272711 #18512]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:42:06.273312 #18512]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:42:15.225691 #18564]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:42:15.226709 #18564]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:42:20.528434 #18564]  INFO -- : Changing student name
+I, [2023-05-19T16:42:30.537042 #18564]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:42:30.537713 #18564]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:44:05.794003 #18657]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:44:05.795160 #18657]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:44:09.925772 #18657]  INFO -- : Changing student name
+I, [2023-05-19T16:44:20.793818 #18657]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:44:20.794530 #18657]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:45:19.307969 #18730]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:45:19.309288 #18730]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:45:28.752672 #18730]  INFO -- : Changing student name
+I, [2023-05-19T16:45:37.142313 #18730]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:45:37.143001 #18730]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:45:50.181633 #18730]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:45:50.182634 #18730]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:45:50.384878 #18730]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:45:50.385837 #18730]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:46:26.526752 #18809]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:46:26.527782 #18809]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:46:30.147177 #18809]  INFO -- : Changing student name
+I, [2023-05-19T16:48:37.197696 #18929]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:48:37.198747 #18929]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:48:41.241610 #18929]  INFO -- : Changing student name
+I, [2023-05-19T16:48:46.860668 #18929]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:48:46.861302 #18929]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:50:51.526612 #19031]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:50:51.527694 #19031]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:50:56.989479 #19031]  INFO -- : Changing student name
+I, [2023-05-19T16:51:06.199277 #19031]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:51:06.199901 #19031]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:56:38.138787 #19260]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:56:38.139856 #19260]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:56:43.764840 #19260]  INFO -- : Changing student name
+I, [2023-05-19T16:56:50.451910 #19260]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:56:50.452561 #19260]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:59:26.795947 #19381]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T16:59:26.797239 #19381]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T16:59:30.267845 #19381]  INFO -- : Changing student name
+I, [2023-05-19T17:36:49.276970 #21576]  INFO -- : Refreshing data with k_page=1 and number_students=6
+I, [2023-05-19T17:36:49.278002 #21576]  INFO -- : Data refreshed successfully with k_page=1 and number_students=6
+I, [2023-05-19T18:08:56.419196 #22338]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:08:56.420266 #22338]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:09:02.361946 #22338]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:09:02.362876 #22338]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:10:07.970479 #22391]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:10:07.971518 #22391]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:10:49.306074 #22425]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:10:49.307058 #22425]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:10:54.519529 #22425]  INFO -- : Refreshing data with k_page=2 and number_students=5
+I, [2023-05-19T18:10:54.520387 #22425]  INFO -- : Data refreshed successfully with k_page=2 and number_students=5
+I, [2023-05-19T18:10:55.078780 #22425]  INFO -- : Refreshing data with k_page=3 and number_students=5
+I, [2023-05-19T18:10:55.079758 #22425]  INFO -- : Data refreshed successfully with k_page=3 and number_students=5
+I, [2023-05-19T18:10:56.883077 #22425]  INFO -- : Refreshing data with k_page=2 and number_students=5
+I, [2023-05-19T18:10:56.883946 #22425]  INFO -- : Data refreshed successfully with k_page=2 and number_students=5
+I, [2023-05-19T18:10:57.155442 #22425]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:10:57.156415 #22425]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:12:04.419326 #22504]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:12:04.420365 #22504]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:13:15.648929 #22552]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:13:15.650078 #22552]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:14:44.709603 #22622]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:14:44.710631 #22622]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:14:46.951065 #22622]  INFO -- : Refreshing data with k_page=2 and number_students=5
+I, [2023-05-19T18:14:46.951983 #22622]  INFO -- : Data refreshed successfully with k_page=2 and number_students=5
+I, [2023-05-19T18:14:47.272649 #22622]  INFO -- : Refreshing data with k_page=3 and number_students=5
+I, [2023-05-19T18:14:47.273539 #22622]  INFO -- : Data refreshed successfully with k_page=3 and number_students=5
+I, [2023-05-19T18:15:28.896831 #22685]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:15:28.897926 #22685]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:15:45.755871 #22711]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:15:45.756946 #22711]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:15:55.915289 #22735]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:15:55.916442 #22735]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:17:02.213438 #22800]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:17:02.214421 #22800]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:17:47.913358 #22838]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:17:47.914394 #22838]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:17:55.316725 #22838]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:17:55.317453 #22838]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:17:55.318586 #22838]  INFO -- : Deleted students with IDs: 12
+I, [2023-05-19T18:17:55.357189 #22838]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:17:55.357916 #22838]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:17:55.358641 #22838]  INFO -- : Deleted students with IDs: 16
+I, [2023-05-19T18:17:57.820306 #22838]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:17:57.821063 #22838]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:17:57.821926 #22838]  INFO -- : Deleted students with IDs: 17
+I, [2023-05-19T18:18:00.761882 #22838]  INFO -- : Changing student name
+I, [2023-05-19T18:18:09.783608 #22838]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:18:09.784254 #22838]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:18:14.637630 #22838]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:18:14.638537 #22838]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:18:15.916952 #22838]  INFO -- : Add student
+I, [2023-05-19T18:18:37.358256 #22838]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:18:37.358873 #22838]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-19T18:18:40.339573 #22838]  INFO -- : Refreshing data with k_page=2 and number_students=5
+I, [2023-05-19T18:18:40.340472 #22838]  INFO -- : Data refreshed successfully with k_page=2 and number_students=5
+I, [2023-05-19T18:18:40.577396 #22838]  INFO -- : Refreshing data with k_page=3 and number_students=5
+I, [2023-05-19T18:18:40.578397 #22838]  INFO -- : Data refreshed successfully with k_page=3 and number_students=5
+I, [2023-05-19T18:19:23.244026 #22958]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-19T18:19:23.245048 #22958]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
