@@ -10,7 +10,7 @@ class StudentList_db_Adapter
   end
 
   def student_by_id(student_id)
-    student_id = student_id.first.to_i
+    student_id = student_id
     result = @db.query("SELECT * FROM students WHERE id = #{student_id}").first
     return Student.from_hash(result.transform_keys(&:to_sym)) if result
     nil
@@ -29,22 +29,6 @@ class StudentList_db_Adapter
   end
 
 
-  # def replace_student(student_id, student)
-  #   query = <<~SQL
-  #   UPDATE students
-  #   SET first_name = ?,
-  #       last_name = ?,
-  #       paternal_name = ?,
-  #       phone = ?,
-  #       telegram = ?,
-  #       email = ?,
-  #       git = ?
-  #   WHERE id = ?
-  #   SQL
-  #
-  #   stmt = @db.prepare(query)
-  #   stmt.execute(*student_fields(student), student_id.first.to_i)
-  # end
 
   def replace_student(student_id, student)
     fields = *student_fields(student)
@@ -66,24 +50,6 @@ class StudentList_db_Adapter
                                WHERE id = #{student_id.first.to_i}")
   end
 
-
-  #
-  # def replace_student(student_id, student)
-  #   query = <<~SQL
-  #   UPDATE students
-  #   SET first_name = ?,
-  #       last_name = ?,
-  #       paternal_name = ?,
-  #       phone = ?,
-  #       telegram = ?,
-  #       email = ?,
-  #       git = ?
-  #   WHERE id = ?
-  #   SQL
-  #
-  #   stmt = @db.prepare(query)
-  #   stmt.execute(*student_fields(student), student_id)
-  # end
 
 
 

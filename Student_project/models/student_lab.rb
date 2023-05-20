@@ -9,17 +9,13 @@ class StudentLab
   end
 
   def get_lab_by_number(id_lab)
-    hash = db.execute('SELECT * FROM labs WHERE number = ?', id_lab).first
+    id_lab = id_lab
+    hash = @db.query("SELECT * FROM labs WHERE number = #{id_lab}").first
     return nil if hash.nil?
     Lab.new(**hash.transform_keys(&:to_sym))
   end
 
-  # def student_by_id(student_id)
-  #   student_id = student_id.first.to_i
-  #   result = @db.query("SELECT * FROM students WHERE id = #{student_id}").first
-  #   return Student.from_hash(result.transform_keys(&:to_sym)) if result
-  #   nil
-  # end
+
   def add_lab(lab)
     # db.query('insert into labs (number, name, date_load) VALUES (?, ?, ?)', *lab_fields(lab)).first
     stmt = db.prepare('INSERT INTO labs (number,name,date_load) VALUES (?, ?, ?)')
@@ -29,15 +25,34 @@ class StudentLab
   end
 
   def remove_lab(id_lab)
-    db.execute('DELETE FROM labs WHERE number = ?', id_lab)
+    db.query("DELETE FROM labs WHERE number = #{id_lab}")
   end
-  def replace_lab(id_lab, lab)
-    db.execute('UPDATE labs SET name=?, date_load=? WHERE number=?',*lab_fields(lab), id_lab)
-  end
-  def get_lab_list(data_list=nil) #получение все лаб в базе
-    labs_hash = db.execute('SELECT * FROM labs')
-    labs = labs_hash.map{|lab| Lab.new(**lab.transform_keys(&:to_sym))}
 
+  #ну дальше не работает(((
+  # def replace_lab(id_lab, lab)
+  #   fields=*lab_fields(lab)
+  #   puts fields[1],fields[2]
+  #   name = fields[1].nil? ? 'NULL' : fields[3]
+  #   date_load = fields[2].nil? ? 'NULL' : "'#{fields[4]}'"
+  #
+  #   db.query("UPDATE labs SET name = '#{name}',
+  #                              date_load = '#{date_load}',
+  #                              WHERE number = #{id_lab}")
+  #
+  # end
+
+
+  def replace_lab(id_lab, lab)
+    sql = 'UPDATE labs SET name=?, date_load=? WHERE number=?'
+    fields=*lab_fields(lab)
+    db.prepare(sql).execute(fields[1],fields[2], id_lab)
+  end
+
+
+
+  def get_lab_list(data_list=nil) #получение все лаб в базе
+    labs_hash = db.query('SELECT * FROM labs')
+    labs = labs_hash.map{|lab| Lab.new(**lab.transform_keys(&:to_sym))}
     return DataListStudentLab.new(labs) if data_list.nil?
     data_list.replace_objects(labs)
     data_list
@@ -48,9 +63,7 @@ class StudentLab
   end
 
   def lab_count
-    db.results_as_hash=false
-    res=db.execute("Select COUNT(*) from labs").first[0]
-    db.results_as_hash=true
+    res=db.query('SELECT COUNT(number) FROM labs').first.values.first
     res
   end
 

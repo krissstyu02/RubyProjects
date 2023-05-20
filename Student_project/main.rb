@@ -81,11 +81,11 @@ end
 
 
 # Создаем экземпляр класса StudentListDB
-# student_list = StudentList_db_Adapter.new
+student_list = StudentList_db_Adapter.new
 
 # Тест метода student_by_id
-# student = student_list.student_by_id(1)
-# puts student.inspect
+student = student_list.student_by_id(1)
+puts student.inspect
 
 # # Тест метода add_student
 # student2 = Student.new('Антонов', 'Иван', 'Борисович', { id: 1, telegram: '@ivan45' })
@@ -103,13 +103,24 @@ end
 # deleted_student = student_list.student_by_id(id)
 # puts "Удален студент"+deleted_student.inspect
 
-app = FXApp.new
-Window.new(app)
-app.create
-app.run
+# app = FXApp.new
+# Window.new(app)
+# app.create
+# app.run
 
-# require_relative 'models/student_lab'
-# require_relative 'lab_model/labs'
-# lab1 = Lab.new(**{number: 3, name: 'Лаба333', date_load: '2023-10-21'})
-# db=StudentLab.new
+require_relative 'models/student_lab'
+require_relative 'lab_model/labs'
+lab1 = Lab.new(**{number: 3, name: 'Лаба333', date_load: '2023-10-21'})
+db=StudentLab.new
+puts db.get_lab_by_number(2)
 # db.add_lab(lab1)
+
+db.remove_lab(3)
+puts db.get_next_number
+puts db.lab_count
+
+
+db.replace_lab(1,lab1)
+puts db.get_lab_by_number(1)
+
+# просмотреть и проверить все методы во 2 адаптере и идем дальше
