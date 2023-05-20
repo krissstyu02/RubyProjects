@@ -52,9 +52,9 @@ class Window < FXMainWindow
       when 0
 
         @first_tab.refresh
-        # when 1
-        #   # для второй вкладки
-        #   @controller.refresh_data_for_tab2
+        when 1
+          # для второй вкладки
+          @second_tab.refresh
         # when 2
         #   # для третьей вкладки
         #   @controller.refresh_data_for_tab3

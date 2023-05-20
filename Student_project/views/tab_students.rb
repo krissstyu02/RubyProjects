@@ -17,21 +17,25 @@ class TabStudent<FXVerticalFrame
     update_page_label
   end
 
-  def on_datalist_changed(table)
+  def self.update_data_table(table_self, new_table)
     row_number=0
-    (0...@table.getNumRows).each do |row|
-      (0...@table.getNumColumns).each do |col|
-        @table.setItemText(row, col, "")
+    (0...table_self.getNumRows).each do |row|
+      (0...table_self.getNumColumns).each do |col|
+        table_self.setItemText(row, col, "")
       end
     end
-    table.each do |row|
-      (1..3).each { |index_field| @table.setItemText(row_number, index_field-1, row[index_field].to_s)  }
+    new_table.each do |row|
+      (1..3).each { |index_field| table_self.setItemText(row_number, index_field-1, row[index_field].to_s)  }
       row_number+=1
     end
   end
 
   def refresh
     @controller.refresh_data(@current_page, @students_on_page)
+  end
+
+  def on_datalist_changed(table)
+    TabStudent.update_data_table(@table, table)
   end
 
 

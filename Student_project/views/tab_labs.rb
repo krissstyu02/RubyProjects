@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 require 'fox16'
 include Fox
+require_relative '../controller/lab_controller'
+require_relative 'tab_students'
+
 class TabLab<FXVerticalFrame
   def initialize(parent, *args, &blk)
     super
-    @controller
+    @controller = StudentLabController.new(self)
     add_table
   end
 
@@ -24,53 +27,77 @@ class TabLab<FXVerticalFrame
     @table.setColumnWidth(1, 300)
     @table.setColumnWidth(2, 150)
 
-  end
+    @table.getColumnHeader.connect(SEL_COMMAND) do |a, b, col|
+      sort_table_by_column(@table, col)
+      end
 
-  def add_crud(parent)
-    #добавление кнопок
-    btn_list = FXHorizontalFrame.new(parent)
-    btn_add = FXButton.new(btn_list, "Добавить", :opts=>BUTTON_NORMAL)
-    btn_update = FXButton.new(btn_list, "Обновить", :opts=>BUTTON_NORMAL)
-    combo_change = FXComboBox.new(btn_list, 20, :opts=>  FRAME_SUNKEN|FRAME_THICK|LAYOUT_SIDE_TOP|LAYOUT_FILL_X)
-    # btn_change = FXButton.new(btn_list, "Изменить", :opts=>BUTTON_NORMAL)
-    btn_delete = FXButton.new(btn_list, "Удалить", :opts=>BUTTON_NORMAL)
+    page_controls2 = FXHorizontalFrame.new(table_frame, :opts => LAYOUT_CENTER_X)
+    # Создаем кнопку "Добавить"
+    btn_add = FXButton.new(page_controls2, "Добавить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_add.backColor = FXRGB(255, 255, 255)
+    btn_add.textColor = FXRGB(0, 0, 0)
+    btn_add.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
 
-    combo_change.disable
+
+    # Создаем кнопку "Удалить"
+    btn_delete = FXButton.new(page_controls2, "Удалить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_delete.backColor = FXRGB(255, 255, 255)
+    btn_delete.textColor = FXRGB(0, 0, 0)
+    btn_delete.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
+
+
+    # Создаем кнопку "Обновить"
+    btn_refresh = FXButton.new(page_controls2, "Обновить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_refresh.backColor = FXRGB(255, 255, 255)
+    btn_refresh.textColor = FXRGB(0, 0, 0)
+    btn_refresh.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
+
+
+    # Создаем кнопку "Изменить"
+    btn_remove = FXButton.new(page_controls2, "Изменить", :opts => BUTTON_NORMAL | LAYOUT_CENTER_Y)
+    btn_remove.backColor = FXRGB(255, 255, 255)
+    btn_remove.textColor = FXRGB(0, 0, 0)
+    btn_remove.font = FXFont.new(app, "Arial", 10, :weight => FONTWEIGHT_BOLD)
+
+
     btn_delete.disable
+    btn_remove.disable
 
-    combo_change.appendItem("Изменить ФИО")
-    combo_change.appendItem("Изменить Git")
-    combo_change.appendItem("Изменить контакт")
-
-
-    # Устанавливаем обработчик события SEL_CHANGED для таблицы
     @table.connect(SEL_CHANGED) do
       num_selected_rows = 0
       (0...@table.getNumRows()).each { |row_index| num_selected_rows+=1 if @table.rowSelected?(row_index)}
 
       # Если выделена только одна строка, кнопка должна быть неактивной
       if num_selected_rows == 1
-        combo_change.enable
+        btn_remove.enable
         btn_delete.enable
         # Если выделено несколько строк, кнопка должна быть активной
       elsif num_selected_rows >1
-        combo_change.disable
+        btn_remove.disable
         btn_delete.enable
       end
     end
 
     @table.getRowHeader.connect(SEL_RIGHTBUTTONPRESS) do
       @table.killSelection(true)
-      combo_change.disable
+      btn_remove.disable
       btn_delete.disable
     end
 
-
-    btn_update.connect(SEL_COMMAND) do
+    btn_refresh.connect(SEL_COMMAND) do
       refresh
     end
+
+  end
+
+  def refresh
+    @controller.refresh_data
   end
 
 
-end
+  def on_datalist_changed(table)
+    TabStudent.update_data_table(@table, table)
+  end
+
+  end
 
