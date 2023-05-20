@@ -127,3 +127,34 @@ I, [2023-05-19T18:18:35.068361 #22838]  INFO -- : Validating fields
 I, [2023-05-19T18:18:35.325654 #22838]  INFO -- : Validating fields
 I, [2023-05-19T18:18:37.353150 #22838]  INFO -- : Saving student
 I, [2023-05-19T18:18:37.358161 #22838]  INFO -- : Executing add student operation
+I, [2023-05-20T02:50:50.235393 #3566]  INFO -- : Validating fields
+E, [2023-05-20T02:50:50.235712 #3566] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=К!
+I, [2023-05-20T02:50:50.605059 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:50.835311 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:51.005213 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:51.149674 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:51.358132 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:51.578349 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:51.717308 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:53.962922 #3566]  INFO -- : Validating fields
+E, [2023-05-20T02:50:53.963097 #3566] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=В
+I, [2023-05-20T02:50:54.235264 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:54.509259 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:54.716729 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:54.858198 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:55.462514 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:55.639229 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:55.890198 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:56.031427 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:56.203161 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:56.463184 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:56.681279 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:58.913373 #3566]  INFO -- : Validating fields
+E, [2023-05-20T02:50:58.913679 #3566] ERROR -- : Error occurred while validating fields: Incorrect value: paternal_name=С!
+I, [2023-05-20T02:50:59.333514 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:59.522980 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:59.772525 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:50:59.939359 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:51:00.111117 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:51:01.415340 #3566]  INFO -- : Saving student
+I, [2023-05-20T02:51:01.422891 #3566]  INFO -- : Executing add student operation

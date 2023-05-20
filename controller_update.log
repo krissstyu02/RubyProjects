@@ -199,3 +199,243 @@ I, [2023-05-19T18:18:07.480300 #22838]  INFO -- : Validating fields
 I, [2023-05-19T18:18:07.625829 #22838]  INFO -- : Validating fields
 I, [2023-05-19T18:18:09.782462 #22838]  INFO -- : Saving updated student
 I, [2023-05-19T18:18:09.783521 #22838]  INFO -- : Executing add student operation
+I, [2023-05-19T18:35:20.392150 #24189]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:35:23.342644 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:23.913623 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:24.233560 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:25.912782 #24189]  INFO -- : Saving updated student
+I, [2023-05-19T18:35:25.914120 #24189]  INFO -- : Executing add student operation
+I, [2023-05-19T18:35:29.573898 #24189]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:35:35.632345 #24189]  INFO -- : Validating fields
+E, [2023-05-19T18:35:35.632610 #24189] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=П
+I, [2023-05-19T18:35:35.856777 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:36.092715 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:36.309837 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:36.498601 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:36.764423 #24189]  INFO -- : Validating fields
+I, [2023-05-19T18:35:39.199038 #24189]  INFO -- : Saving updated student
+I, [2023-05-19T18:35:39.199944 #24189]  INFO -- : Executing add student operation
+I, [2023-05-19T18:39:06.872186 #24627]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:39:13.157493 #24627]  INFO -- : Validating fields
+E, [2023-05-19T18:39:13.157708 #24627] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=П
+I, [2023-05-19T18:39:13.417799 #24627]  INFO -- : Validating fields
+I, [2023-05-19T18:39:13.922038 #24627]  INFO -- : Validating fields
+I, [2023-05-19T18:39:14.189274 #24627]  INFO -- : Validating fields
+I, [2023-05-19T18:39:14.402217 #24627]  INFO -- : Validating fields
+I, [2023-05-19T18:39:14.495589 #24627]  INFO -- : Validating fields
+I, [2023-05-19T18:39:16.802628 #24627]  INFO -- : Saving updated student
+I, [2023-05-19T18:41:52.251381 #24788]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:41:57.014112 #24788]  INFO -- : Validating fields
+E, [2023-05-19T18:41:57.014309 #24788] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иванx!
+I, [2023-05-19T18:41:57.141147 #24788]  INFO -- : Validating fields
+E, [2023-05-19T18:41:57.141376 #24788] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иванxb!
+I, [2023-05-19T18:41:57.447618 #24788]  INFO -- : Validating fields
+E, [2023-05-19T18:41:57.447795 #24788] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иванxbr!
+I, [2023-05-19T18:41:59.377874 #24788]  INFO -- : Validating fields
+E, [2023-05-19T18:41:59.378070 #24788] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иванxb!
+I, [2023-05-19T18:41:59.580203 #24788]  INFO -- : Validating fields
+E, [2023-05-19T18:41:59.580408 #24788] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иванx!
+I, [2023-05-19T18:41:59.812387 #24788]  INFO -- : Validating fields
+I, [2023-05-19T18:42:01.079727 #24788]  INFO -- : Validating fields
+I, [2023-05-19T18:42:01.230500 #24788]  INFO -- : Validating fields
+I, [2023-05-19T18:42:01.455017 #24788]  INFO -- : Validating fields
+I, [2023-05-19T18:42:02.560634 #24788]  INFO -- : Saving updated student
+I, [2023-05-19T18:44:04.859611 #24977]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:44:08.470159 #24977]  INFO -- : Validating fields
+E, [2023-05-19T18:44:08.470375 #24977] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=П
+I, [2023-05-19T18:44:08.681358 #24977]  INFO -- : Validating fields
+I, [2023-05-19T18:44:08.915421 #24977]  INFO -- : Validating fields
+I, [2023-05-19T18:44:09.144446 #24977]  INFO -- : Validating fields
+I, [2023-05-19T18:44:09.348305 #24977]  INFO -- : Validating fields
+I, [2023-05-19T18:44:09.498582 #24977]  INFO -- : Validating fields
+I, [2023-05-19T18:44:10.783288 #24977]  INFO -- : Saving updated student
+I, [2023-05-19T18:49:50.977263 #25328]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:49:54.995784 #25328]  INFO -- : Validating fields
+E, [2023-05-19T18:49:54.995988 #25328] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=П
+I, [2023-05-19T18:49:55.232406 #25328]  INFO -- : Validating fields
+I, [2023-05-19T18:49:55.475791 #25328]  INFO -- : Validating fields
+I, [2023-05-19T18:49:55.685289 #25328]  INFO -- : Validating fields
+I, [2023-05-19T18:49:55.871038 #25328]  INFO -- : Validating fields
+I, [2023-05-19T18:49:56.004953 #25328]  INFO -- : Validating fields
+I, [2023-05-19T18:49:57.605550 #25328]  INFO -- : Saving updated student
+I, [2023-05-19T18:51:34.676369 #25439]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:51:37.624383 #25439]  INFO -- : Validating fields
+E, [2023-05-19T18:51:37.624587 #25439] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=П
+I, [2023-05-19T18:51:37.831579 #25439]  INFO -- : Validating fields
+I, [2023-05-19T18:51:38.068348 #25439]  INFO -- : Validating fields
+I, [2023-05-19T18:51:38.277637 #25439]  INFO -- : Validating fields
+I, [2023-05-19T18:51:38.453524 #25439]  INFO -- : Validating fields
+I, [2023-05-19T18:51:38.603740 #25439]  INFO -- : Validating fields
+I, [2023-05-19T18:51:39.990997 #25439]  INFO -- : Saving updated student
+I, [2023-05-19T18:53:48.356850 #25563]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:53:51.510209 #25563]  INFO -- : Validating fields
+E, [2023-05-19T18:53:51.510428 #25563] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=П
+I, [2023-05-19T18:53:51.753167 #25563]  INFO -- : Validating fields
+I, [2023-05-19T18:53:52.012767 #25563]  INFO -- : Validating fields
+I, [2023-05-19T18:53:52.221954 #25563]  INFO -- : Validating fields
+I, [2023-05-19T18:53:52.416660 #25563]  INFO -- : Validating fields
+I, [2023-05-19T18:53:52.560322 #25563]  INFO -- : Validating fields
+I, [2023-05-19T18:53:54.434150 #25563]  INFO -- : Saving updated student
+I, [2023-05-19T18:54:53.114682 #25626]  INFO -- : Adding view to update student controller
+I, [2023-05-19T18:54:58.170628 #25626]  INFO -- : Validating fields
+E, [2023-05-19T18:54:58.170843 #25626] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=А
+I, [2023-05-19T18:54:58.398003 #25626]  INFO -- : Validating fields
+I, [2023-05-19T18:54:58.578956 #25626]  INFO -- : Validating fields
+I, [2023-05-19T18:55:00.981495 #25626]  INFO -- : Saving updated student
+I, [2023-05-19T18:55:00.982666 #25626]  INFO -- : Executing add student operation
+I, [2023-05-20T02:04:22.048416 #6297]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:04:30.529607 #6297]  INFO -- : Validating fields
+I, [2023-05-20T02:04:31.606178 #6297]  INFO -- : Validating fields
+I, [2023-05-20T02:04:31.837592 #6297]  INFO -- : Validating fields
+I, [2023-05-20T02:04:33.439704 #6297]  INFO -- : Saving updated student
+I, [2023-05-20T02:04:33.443178 #6297]  INFO -- : Executing add student operation
+I, [2023-05-20T02:10:35.765268 #6349]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:10:41.716756 #6349]  INFO -- : Validating fields
+E, [2023-05-20T02:10:41.716968 #6349] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=У
+I, [2023-05-20T02:10:42.144400 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:42.440480 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:42.677273 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:42.854594 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:43.472468 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:43.666804 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:43.798777 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:44.420894 #6349]  INFO -- : Validating fields
+I, [2023-05-20T02:10:45.852639 #6349]  INFO -- : Saving updated student
+I, [2023-05-20T02:12:54.000044 #6415]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:12:59.217546 #6415]  INFO -- : Validating fields
+E, [2023-05-20T02:12:59.217759 #6415] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=У
+I, [2023-05-20T02:12:59.689375 #6415]  INFO -- : Validating fields
+I, [2023-05-20T02:12:59.922635 #6415]  INFO -- : Validating fields
+I, [2023-05-20T02:13:00.190247 #6415]  INFO -- : Validating fields
+I, [2023-05-20T02:13:00.398039 #6415]  INFO -- : Validating fields
+I, [2023-05-20T02:13:00.590471 #6415]  INFO -- : Validating fields
+I, [2023-05-20T02:13:00.845356 #6415]  INFO -- : Validating fields
+I, [2023-05-20T02:13:01.146538 #6415]  INFO -- : Validating fields
+I, [2023-05-20T02:13:03.263140 #6415]  INFO -- : Saving updated student
+I, [2023-05-20T02:18:04.549595 #6488]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:18:07.825285 #6488]  INFO -- : Validating fields
+I, [2023-05-20T02:18:08.030203 #6488]  INFO -- : Validating fields
+I, [2023-05-20T02:18:09.413336 #6488]  INFO -- : Saving updated student
+I, [2023-05-20T02:22:25.669992 #6549]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:22:30.111837 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:30.112049 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=к
+I, [2023-05-20T02:22:30.300394 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:30.300583 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=кт
+I, [2023-05-20T02:22:30.541439 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:30.541615 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=кто
+I, [2023-05-20T02:22:30.755569 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:30.755754 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=ктоо
+I, [2023-05-20T02:22:32.896773 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:32.896958 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=кто
+I, [2023-05-20T02:22:33.398151 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:33.398331 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=кт
+I, [2023-05-20T02:22:33.427065 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:33.427231 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=к
+I, [2023-05-20T02:22:33.458939 #6549]  INFO -- : Validating fields
+I, [2023-05-20T02:22:33.960742 #6549]  INFO -- : Validating fields
+E, [2023-05-20T02:22:33.960914 #6549] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=К
+I, [2023-05-20T02:22:34.384446 #6549]  INFO -- : Validating fields
+I, [2023-05-20T02:22:34.621290 #6549]  INFO -- : Validating fields
+I, [2023-05-20T02:22:35.183370 #6549]  INFO -- : Validating fields
+I, [2023-05-20T02:22:36.705984 #6549]  INFO -- : Saving updated student
+I, [2023-05-20T02:23:27.935416 #6587]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:23:31.221352 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:31.221572 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=к!
+I, [2023-05-20T02:23:31.425976 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:31.426175 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=кт!
+I, [2023-05-20T02:23:31.642770 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:31.642970 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=кто!
+I, [2023-05-20T02:23:31.873220 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:31.873421 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=кто !
+I, [2023-05-20T02:23:32.033986 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:32.034182 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=кто к!
+I, [2023-05-20T02:23:32.144992 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:32.145210 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=кто кт!
+I, [2023-05-20T02:23:32.338816 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:32.339014 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=кто кто!
+I, [2023-05-20T02:23:36.055776 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:36.055982 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=то кто!
+I, [2023-05-20T02:23:36.578173 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:36.578394 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Кто кто!
+I, [2023-05-20T02:23:40.436645 #6587]  INFO -- : Validating fields
+E, [2023-05-20T02:23:40.436841 #6587] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Кто !
+I, [2023-05-20T02:23:41.937274 #6587]  INFO -- : Validating fields
+I, [2023-05-20T02:23:44.029994 #6587]  INFO -- : Saving updated student
+I, [2023-05-20T02:24:44.734031 #6614]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:24:48.063832 #6614]  INFO -- : Validating fields
+E, [2023-05-20T02:24:48.064026 #6614] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иван !
+I, [2023-05-20T02:24:48.580920 #6614]  INFO -- : Validating fields
+I, [2023-05-20T02:24:50.248599 #6614]  INFO -- : Saving updated student
+I, [2023-05-20T02:25:24.261990 #6636]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:25:26.776540 #6636]  INFO -- : Validating fields
+E, [2023-05-20T02:25:26.776763 #6636] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иван !
+I, [2023-05-20T02:25:26.995864 #6636]  INFO -- : Validating fields
+I, [2023-05-20T02:25:28.418785 #6636]  INFO -- : Saving updated student
+I, [2023-05-20T02:27:29.232998 #6669]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:27:32.248607 #6669]  INFO -- : Validating fields
+E, [2023-05-20T02:27:32.248826 #6669] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иван !
+I, [2023-05-20T02:27:32.588762 #6669]  INFO -- : Validating fields
+I, [2023-05-20T02:27:33.952926 #6669]  INFO -- : Saving updated student
+I, [2023-05-20T02:28:50.032763 #6704]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:28:53.827136 #6704]  INFO -- : Validating fields
+E, [2023-05-20T02:28:53.827341 #6704] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иван !
+I, [2023-05-20T02:28:54.122872 #6704]  INFO -- : Validating fields
+I, [2023-05-20T02:28:55.482684 #6704]  INFO -- : Saving updated student
+I, [2023-05-20T02:30:21.931713 #6733]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:30:25.458725 #6733]  INFO -- : Validating fields
+E, [2023-05-20T02:30:25.458919 #6733] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иванh!
+I, [2023-05-20T02:30:25.847650 #6733]  INFO -- : Validating fields
+I, [2023-05-20T02:30:27.357735 #6733]  INFO -- : Saving updated student
+I, [2023-05-20T02:31:32.460045 #6772]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:31:35.340149 #6772]  INFO -- : Validating fields
+E, [2023-05-20T02:31:35.340355 #6772] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иван !
+I, [2023-05-20T02:31:35.529755 #6772]  INFO -- : Validating fields
+I, [2023-05-20T02:31:36.705374 #6772]  INFO -- : Saving updated student
+I, [2023-05-20T02:33:21.221760 #6812]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:33:23.383393 #6812]  INFO -- : Validating fields
+E, [2023-05-20T02:33:23.383596 #6812] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иван !
+I, [2023-05-20T02:33:23.604655 #6812]  INFO -- : Validating fields
+I, [2023-05-20T02:33:25.134218 #6812]  INFO -- : Saving updated student
+I, [2023-05-20T02:33:59.109622 #6840]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:34:00.697069 #6840]  INFO -- : Validating fields
+E, [2023-05-20T02:34:00.697302 #6840] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Иван !
+I, [2023-05-20T02:34:00.994534 #6840]  INFO -- : Validating fields
+I, [2023-05-20T02:34:03.288753 #6840]  INFO -- : Saving updated student
+I, [2023-05-20T02:34:03.296558 #6840]  INFO -- : Executing add student operation
+I, [2023-05-20T02:42:33.181592 #7078]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:42:40.153950 #7078]  INFO -- : Validating fields
+E, [2023-05-20T02:42:40.154168 #7078] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=Ивановb
+I, [2023-05-20T02:42:40.331173 #7078]  INFO -- : Validating fields
+E, [2023-05-20T02:42:40.331349 #7078] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=Ивановbx
+I, [2023-05-20T02:42:41.196328 #7078]  INFO -- : Validating fields
+E, [2023-05-20T02:42:41.196522 #7078] ERROR -- : Error occurred while validating fields: Incorrect value: last_name=Ивановb
+I, [2023-05-20T02:42:41.445228 #7078]  INFO -- : Validating fields
+I, [2023-05-20T02:42:42.582064 #7078]  INFO -- : Validating fields
+I, [2023-05-20T02:42:42.718819 #7078]  INFO -- : Validating fields
+I, [2023-05-20T02:42:44.042279 #7078]  INFO -- : Saving updated student
+I, [2023-05-20T02:42:44.048300 #7078]  INFO -- : Executing add student operation
+I, [2023-05-20T02:51:08.219773 #3566]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:51:12.159194 #3566]  INFO -- : Validating fields
+I, [2023-05-20T02:51:13.445022 #3566]  INFO -- : Saving updated student
+I, [2023-05-20T02:51:13.451238 #3566]  INFO -- : Executing add student operation
+I, [2023-05-20T02:53:11.170239 #3658]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:53:14.894672 #3658]  INFO -- : Validating fields
+E, [2023-05-20T02:53:14.894891 #3658] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Кристина !
+I, [2023-05-20T02:53:15.149127 #3658]  INFO -- : Validating fields
+I, [2023-05-20T02:53:16.666003 #3658]  INFO -- : Saving updated student
+I, [2023-05-20T02:53:16.673498 #3658]  INFO -- : Executing add student operation
+I, [2023-05-20T02:56:30.868964 #3838]  INFO -- : Adding view to update student controller
+I, [2023-05-20T02:56:32.685684 #3838]  INFO -- : Validating fields
+E, [2023-05-20T02:56:32.685893 #3838] ERROR -- : Error occurred while validating fields: Incorrect value: first_name=Вссс !
+I, [2023-05-20T02:56:33.154993 #3838]  INFO -- : Validating fields
+I, [2023-05-20T02:56:34.396592 #3838]  INFO -- : Saving updated student
+I, [2023-05-20T03:01:41.081471 #4769]  INFO -- : Adding view to update student controller
+I, [2023-05-20T03:01:45.841148 #4769]  INFO -- : Validating fields
+I, [2023-05-20T03:01:46.074091 #4769]  INFO -- : Validating fields
+I, [2023-05-20T03:01:48.014591 #4769]  INFO -- : Saving updated student
+I, [2023-05-20T03:01:48.018564 #4769]  INFO -- : Executing add student operation
+I, [2023-05-20T03:03:41.019995 #4859]  INFO -- : Adding view to update student controller
+I, [2023-05-20T03:03:43.875756 #4859]  INFO -- : Validating fields
+I, [2023-05-20T03:03:44.068361 #4859]  INFO -- : Validating fields
+I, [2023-05-20T03:03:45.495127 #4859]  INFO -- : Saving updated student
+I, [2023-05-20T03:03:45.500591 #4859]  INFO -- : Executing add student operation

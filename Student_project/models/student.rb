@@ -64,7 +64,6 @@ class Student < StudentShort
   #сеттеры
   def phone=(phone)
     raise ArgumentError, "Incorrect value: phone=#{phone}!" if !phone.nil? && !Student.valid_phone?(phone)
-
     @phone = phone
   end
 

@@ -28,23 +28,62 @@ class StudentList_db_Adapter
     @db.query("DELETE FROM students WHERE id = #{student_id}")
   end
 
-  def replace_student(student_id, student)
-    query = <<~SQL
-    UPDATE students
-    SET first_name = ?,
-        last_name = ?,
-        paternal_name = ?,
-        phone = ?,
-        telegram = ?,
-        email = ?,
-        git = ?
-    WHERE id = ?
-    SQL
 
-    stmt = @db.prepare(query)
-    stmt.execute(*student_fields(student), student_id)
+  # def replace_student(student_id, student)
+  #   query = <<~SQL
+  #   UPDATE students
+  #   SET first_name = ?,
+  #       last_name = ?,
+  #       paternal_name = ?,
+  #       phone = ?,
+  #       telegram = ?,
+  #       email = ?,
+  #       git = ?
+  #   WHERE id = ?
+  #   SQL
+  #
+  #   stmt = @db.prepare(query)
+  #   stmt.execute(*student_fields(student), student_id.first.to_i)
+  # end
+
+  def replace_student(student_id, student)
+    fields = *student_fields(student)
+    puts fields
+    puts(student_id)
+
+    phone_value = fields[3].nil? ? 'NULL' : fields[3]
+    telegram_value = fields[4].nil? ? 'NULL' : "'#{fields[4]}'"
+    email_value = fields[5].nil? ? 'NULL' : "'#{fields[5]}'"
+    git_value = fields[6].nil? ? 'NULL' : "'#{fields[6]}'"
+
+    @db.query("UPDATE students SET first_name = '#{fields[1]}',
+                               last_name = '#{fields[0]}',
+                               paternal_name = '#{fields[2]}',
+                               phone = #{phone_value},
+                               telegram = #{telegram_value},
+                               email = #{email_value},
+                               git = #{git_value}
+                               WHERE id = #{student_id.first.to_i}")
   end
 
+
+  #
+  # def replace_student(student_id, student)
+  #   query = <<~SQL
+  #   UPDATE students
+  #   SET first_name = ?,
+  #       last_name = ?,
+  #       paternal_name = ?,
+  #       phone = ?,
+  #       telegram = ?,
+  #       email = ?,
+  #       git = ?
+  #   WHERE id = ?
+  #   SQL
+  #
+  #   stmt = @db.prepare(query)
+  #   stmt.execute(*student_fields(student), student_id)
+  # end
 
 
 
