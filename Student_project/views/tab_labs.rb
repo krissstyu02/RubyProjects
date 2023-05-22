@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'fox16'
 include Fox
-require_relative '../controller/lab_controller'
+require_relative '../controller/labs/lab_controller'
 require_relative 'tab_students'
 
 class TabLab<FXVerticalFrame
@@ -15,7 +15,7 @@ class TabLab<FXVerticalFrame
     table_frame = FXVerticalFrame.new(self, :padLeft=>20)
     # page_change_buttons(table_frame)
     # Создаем таблицу
-    @table = FXTable.new(table_frame, :opts =>  TABLE_READONLY|LAYOUT_FIX_WIDTH|LAYOUT_FIX_HEIGHT|TABLE_COL_SIZABLE|TABLE_ROW_RENUMBER, :width=>600, :height=>320)
+    @table = FXTable.new(table_frame, :opts =>  TABLE_READONLY|LAYOUT_FIX_WIDTH|LAYOUT_FIX_HEIGHT|TABLE_COL_SIZABLE|TABLE_ROW_RENUMBER, :width=>800, :height=>400)
     @table.setTableSize(16, 3)
 
     @table.setColumnText(0, "Номер")
@@ -24,8 +24,8 @@ class TabLab<FXVerticalFrame
 
     # Масштабируем таблицу
     @table.setRowHeaderWidth(30)
-    @table.setColumnWidth(1, 300)
-    @table.setColumnWidth(2, 150)
+    @table.setColumnWidth(1, 400)
+    @table.setColumnWidth(2, 250)
 
     @table.getColumnHeader.connect(SEL_COMMAND) do |a, b, col|
       sort_table_by_column(@table, col)
@@ -88,6 +88,10 @@ class TabLab<FXVerticalFrame
       refresh
     end
 
+    btn_add.connect(SEL_COMMAND) do
+      @controller.add_lab
+    end
+
   end
 
   def refresh
@@ -97,6 +101,25 @@ class TabLab<FXVerticalFrame
 
   def on_datalist_changed(table)
     TabStudent.update_data_table(@table, table)
+  end
+
+  def sort_table_by_column(table, column_index)
+    table_data = []
+    (0...table.getNumRows()).each do |row_index|
+      if table.getItemText(row_index, column_index)!=''
+        row=[]
+        (0...table.getNumColumns()).each do |col_index|
+          row[col_index] = table.getItemText(row_index, col_index)
+        end
+        table_data<<row
+      end
+    end
+    sorted_table_data = table_data.sort_by { |row_data| row_data[column_index] }
+    sorted_table_data.each_with_index do |row_data, row_index|
+      row_data.each_with_index do |cell_data, col_index|
+        table.setItemText(row_index, col_index, cell_data)
+      end
+    end
   end
 
   end
