@@ -433,3 +433,5 @@ I, [2023-05-22T21:22:10.754903 #14319]  INFO -- : Refreshing data with k_page=1 
 I, [2023-05-22T21:22:10.755670 #14319]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
 I, [2023-05-22T21:23:12.352893 #14390]  INFO -- : Refreshing data with k_page=1 and number_students=5
 I, [2023-05-22T21:23:12.353813 #14390]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
+I, [2023-05-22T22:23:27.098341 #15585]  INFO -- : Refreshing data with k_page=1 and number_students=5
+I, [2023-05-22T22:23:27.099183 #15585]  INFO -- : Data refreshed successfully with k_page=1 and number_students=5
