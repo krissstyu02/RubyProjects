@@ -68,13 +68,15 @@ class TabLab<FXVerticalFrame
       (0...@table.getNumRows()).each { |row_index| num_selected_rows+=1 if @table.rowSelected?(row_index)}
 
       # Если выделена только одна строка, кнопка должна быть неактивной
-      if num_selected_rows == 1
+      if num_selected_rows >= 1
         btn_remove.enable
-        btn_delete.enable
+        if @table.rowSelected?(@controller.get_count_lab-1) and num_selected_rows ==1
+          btn_delete.enable
+          end
         # Если выделено несколько строк, кнопка должна быть активной
-      elsif num_selected_rows >1
+      elsif num_selected_rows ==0
         btn_remove.disable
-        btn_delete.enable
+        btn_delete.disable
       end
     end
 
@@ -90,6 +92,11 @@ class TabLab<FXVerticalFrame
 
     btn_add.connect(SEL_COMMAND) do
       @controller.add_lab
+    end
+
+    btn_delete.connect(SEL_COMMAND) do
+      @controller.delete_lab
+      @table.killSelection
     end
 
   end

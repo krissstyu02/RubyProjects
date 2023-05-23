@@ -33,4 +33,12 @@ class StudentLabController
     @view.refresh
   end
 
+  def get_count_lab
+    @student_lab.lab_count
+  end
+  def delete_lab
+    @student_lab.remove_lab(get_count_lab)
+    @view.refresh
+  end
+
   end

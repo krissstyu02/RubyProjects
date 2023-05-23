@@ -18,7 +18,7 @@ class StudentLab
 
   def add_lab(lab)
     # db.query('insert into labs (number, name, date_load) VALUES (?, ?, ?)', *lab_fields(lab)).first
-    stmt = db.prepare('INSERT INTO labs (number,name,date_load) VALUES (?, ?, ?)')
+    stmt = db.prepare('INSERT INTO labs (number,name,date_load,themes,tasks) VALUES (?,?,?, ?, ?)')
     puts(*lab_fields(lab))
     stmt.execute(*lab_fields(lab))
 
@@ -43,9 +43,9 @@ class StudentLab
 
 
   def replace_lab(id_lab, lab)
-    sql = 'UPDATE labs SET name=?, date_load=? WHERE number=?'
+    sql = 'UPDATE labs SET name=?, date_load=? themes=? tasks=? WHERE number=?'
     fields=*lab_fields(lab)
-    db.prepare(sql).execute(fields[1],fields[2], id_lab)
+    db.prepare(sql).execute(fields[1],fields[2],fields[3], fields[4], id_lab)
   end
 
 
@@ -70,6 +70,6 @@ class StudentLab
   private
   attr_accessor :db
   def lab_fields(lab)
-    [lab.number, lab.name, lab.date_load]
+    [lab.number, lab.name, lab.date_load,lab.themes,lab.tasks]
   end
 end
