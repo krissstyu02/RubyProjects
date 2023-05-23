@@ -99,6 +99,13 @@ class TabLab<FXVerticalFrame
       @table.killSelection
     end
 
+    btn_remove.connect(SEL_COMMAND) do
+      index = (0...@table.getNumRows).find {|row_index| @table.rowSelected?(row_index)}
+      @controller.update_lab(index)
+    end
+
+
+
   end
 
   def refresh

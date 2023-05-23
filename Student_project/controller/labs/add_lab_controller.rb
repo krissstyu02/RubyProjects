@@ -31,10 +31,16 @@ class AddLabController
     end
   end
 
-  def validate_date_range(new_date)
-    idx_last_date = @student_lab.lab_count
-    old_date = @student_lab.get_lab_by_number(idx_last_date).date_load
-    Lab.validate_date_range?(new_date, old_date)
-  end
+
+
+  def validate_date_range(new_date, lab_id)
+    idx_last_date = lab_id.to_i-1
+    if idx_last_date>=0
+      old_date = @student_lab.get_lab_by_number(idx_last_date).date_load
+      return Lab.validate_date_range?(new_date, old_date)
+    else
+      true
+    end
+    end
 
 end

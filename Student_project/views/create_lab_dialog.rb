@@ -21,7 +21,7 @@ class CreateLabDialog<FXDialogBox
     frame_data = FXVerticalFrame.new(self, :opts=> LAYOUT_FILL_X|LAYOUT_FILL_Y )
     @field_text = {}
 
-    field_name = [[:number, "Номер лабораторной"], [:name, 'Название'], [:date_load, 'Дата'],
+    field_name = [[:id, "Номер лабораторной"], [:name, 'Название'], [:date_load, 'Дата'],
                   [:themes, 'Темы'], [:tasks, 'Задачи']]
     field_name[0..2].each do |field|
       frame_field = FXHorizontalFrame.new(frame_data)
@@ -43,7 +43,7 @@ class CreateLabDialog<FXDialogBox
 
 
 
-    @field_text[:number].editable = false
+    @field_text[:id].editable = false
     btn_frame = FXHorizontalFrame.new(frame_data, LAYOUT_CENTER_X)
     btn_add=FXButton.new(btn_frame, "Сохранить")
     btn_add.textColor = Fox.FXRGB(0,23,175)
@@ -53,7 +53,7 @@ class CreateLabDialog<FXDialogBox
     btn_back.textColor = Fox.FXRGB(0,23,175)
 
     btn_add.connect(SEL_COMMAND) do
-      if @controller.validate_date_range(@lab.date_load)
+      if @controller.validate_date_range(@lab.date_load,@lab.id)
         @controller.save_lab(@lab)
         self.handle(btn_add, FXSEL(Fox::SEL_COMMAND,
                                    Fox::FXDialogBox::ID_ACCEPT), nil)
@@ -89,9 +89,12 @@ class CreateLabDialog<FXDialogBox
 
   def enter_lab
     unless @lab.nil?
-      nil
+      lab = @lab.to_hash
+      @field_text.each_key do |name_field|
+        @field_text[name_field].text = lab[name_field].to_s
+      end
     else
-      @field_text[:number].text = @controller.next_number_lab.to_s
+      @field_text[:id].text = @controller.next_number_lab.to_s
     end
 
   end
