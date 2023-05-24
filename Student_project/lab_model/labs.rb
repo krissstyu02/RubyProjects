@@ -39,8 +39,8 @@ class Lab
 
 
   def self.validate_date_range?(new_date, old_date)
-    parsed_new_date = Date.parse(new_date)
-    parsed_new_date > old_date
+    # parsed_new_date = Date.parse(new_date)
+    new_date > old_date
   end
 
 
