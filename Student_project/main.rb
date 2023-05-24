@@ -63,6 +63,7 @@ end
 # puts test_table.get_element(0,1)
 
 
+
 # Создаем соединение с базой данных
 # client = Mysql2::Client.new(
 #   :host => 'localhost',
